@@ -2,9 +2,9 @@
 Travel booking app with multiuser chating using MERN stack, NextJS, Socket.io and Redux
 
 
-  Recommended NodeJS Version v16.20.1
-  Recommended NPM Version v8.19.4
-  Recommended Yarn Version v1.22.19
+Recommended NodeJS Version v16.20.1
+Recommended NPM Version v8.19.4
+Recommended Yarn Version v1.22.19
 
 Open the project directory in VSCode or other code editor.
 
@@ -17,7 +17,7 @@ or,
 
 //Database creation for Demo content load
 
--Create a mongoDB database using the name "activeascents"
+-create a MongoDB database using the name "activeascents"
 -create some collections using the following names:
   1. clients
   2. conversations
@@ -30,5 +30,16 @@ or,
 -Now, using mongoDB compass import the JSON object to
 each of the collection from the "/database" directory of the github repository
 
+//Demo Admin Dashboard
+User: "abdullahlimon"
+Password: "12345678"  or "1234567"
+
+//Demo Client Dashboard
+User: "rabeya23"
+Password: "12345678" or "1234567"
+
+//Demo Instructor Dashboard
+User: "limon"
+Password: "12345678" or "1234567"
 
 Now you are ready to go...
