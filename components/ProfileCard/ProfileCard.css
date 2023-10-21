@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@300;400;700&display=swap");
+
+:root {
+  --bg: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+  --font: "Noto Serif Bengali", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+.profile-card-wrapper {
+  width: 100%;
+  background: url("/hero-img/background-custom.jpg");
+  background-repeat: repeat;
+  min-height: 100vh;
+  padding: 120px 0px;
+}
+.dash-profile-card-wrapper {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.dash-profile-card-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.container-profile-card {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0px auto;
+  background: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(130%);
+  border-radius: 10px;
+  overflow: hidden;
+  line-height: 1.4;
+  font-weight: 300;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container-profile-card .tabs {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container-profile-card .tabs li {
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: -2px;
+  font-weight: 400;
+}
+
+.container-profile-card .tabs li.active {
+  border-bottom: 2px solid;
+  border-image: var(--bg);
+  border-image-slice: 1;
+}
+
+.container-profile-card .tab-content {
+  display: none;
+  padding: 20px 0;
+  padding-bottom: 0;
+}
+
+.container-profile-card .tab-content.active {
+  display: block;
+}
+
+.container-profile-card .cover {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 350px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  margin-bottom: 35px;
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-position-y: 75%;
+}
+
+.container-profile-card .cover .profile-pic {
+  max-width: 120px;
+  max-height: 120px;
+  padding: 3px;
+  background-image: var(--bg);
+  margin-bottom: -25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-profile-card .cover .profile-pic img {
+  max-width: 110px;
+  border-radius: 50%;
+}
+
+.container-profile-card .text-center {
+  text-align: center;
+}
+
+.container-profile-card h1 {
+  font-size: 34px;
+  color: rgb(97, 97, 97);
+  margin-bottom: 5px;
+}
+
+.container-profile-card .subtitle {
+  color: rgb(97, 97, 97, 0.9);
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.container-profile-card .main {
+  padding: 20px;
+  color: rgb(97, 97, 97);
+}
+
+.container-profile-card .tab-content strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.container-profile-card .tab-content strong:not(:first-child) {
+  margin-top: 15px;
+}
+
+.container-profile-card .tab-content p {
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.container-profile-card .tab-content p:last-child {
+  margin-bottom: 0;
+}
+
+.container-profile-card input,
+select,
+textarea {
+  font-family: var(--font);
+  background: #f7f6f6;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px) saturate(130%);
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  color: rgb(97, 97, 97);
+  outline: none;
+}
+
+.container-profile-card input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: rgb(97, 97, 97);
+}
+
+.container-profile-card button {
+  font-family: var(--font);
+  background-color: #5ebb79;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  border-color: #5ebb79;
+  width: 100%;
+  color: #0f1623;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.container-profile-card button:hover {
+  background-color: #4cb36a;
+  border-color: #4cb36a;
+}
+@media (max-width: 399px) {
+  .container-profile-card .cover .profile-pic {
+    max-width: 110px;
+    max-height: 110px;
+  }
+  .container-profile-card .cover .profile-pic img {
+    max-width: 100px;
+  }
+  .container-profile-card h1 {
+    font-size: 28px;
+  }
+  .container-profile-card .tabs li {
+    padding: 8px;
+  }
+  .container-profile-card .main {
+    padding: 15px;
+  }
+  .container-profile-card .tab-content {
+    padding: 15px 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .nav-container > .search-input {
+    width: 11rem;
+  }
+}
+
+.profile-form {
+  padding: 0px;
+  display: unset;
+}

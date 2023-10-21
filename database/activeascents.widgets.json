@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "6509a6e1c9acd692398f978a"
+  },
+  "widgetName": "front_client_instructor",
+  "widgetPayload": [
+    {
+      "title": "For Client",
+      "description": "Looking for an Adventure !",
+      "link": "/register",
+      "time": "2023-09-19",
+      "image": "/images/demo2.jpg"
+    },
+    {
+      "title": "For Instructor",
+      "description": "Got qualifications and looking to take people on Adventure ?",
+      "link": "/register",
+      "time": "2023-09-19",
+      "image": "/images/demo7.jpg"
+    }
+  ],
+  "activeStatus": "active"
+},
+{
+  "_id": {
+    "$oid": "6509b4c62078335bc003b936"
+  },
+  "widgetName": "why_choose",
+  "widgetPayload": [
+    {
+      "icon": "fa fa-lightbulb-o",
+      "text": "Creative"
+    },
+    {
+      "icon": "fa fa-cutlery",
+      "text": "Hungry"
+    },
+    {
+      "icon": "fa fa-lightbulb-o",
+      "text": "Creative"
+    },
+    {
+      "icon": "fa fa-lightbulb-o",
+      "text": "Creative"
+    },
+    {
+      "icon": "fa fa-smile-o",
+      "text": "Sleepy"
+    },
+    {
+      "icon": "fa fa-heart",
+      "text": "love"
+    },
+    {
+      "icon": "fa fa-lightbulb-o",
+      "text": "Creative"
+    },
+    {
+      "icon": "fa fa-bolt",
+      "text": "Energetic"
+    }
+  ],
+  "activeStatus": "active"
+},
+{
+  "_id": {
+    "$oid": "6509bfa22078335bc003ba0c"
+  },
+  "widgetName": "our_partner",
+  "widgetPayload": [
+    {
+      "logo": "/hero-img/logo-slider.png"
+    },
+    {
+      "logo": "/hero-img/log-slider-2.png"
+    },
+    {
+      "logo": "/hero-img/logo-slider.png"
+    },
+    {
+      "logo": "/hero-img/log-slider-2.png"
+    },
+    {
+      "logo": "/hero-img/logo-slider.png"
+    },
+    {
+      "logo": "/hero-img/log-slider-2.png"
+    }
+  ],
+  "activeStatus": "active"
+}]

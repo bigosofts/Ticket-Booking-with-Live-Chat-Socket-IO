@@ -1,0 +1,82 @@
+[{
+  "_id": {
+    "$oid": "64f768eba0917dc649e775be"
+  },
+  "userName": "abdullahlimon",
+  "userRole": "instructor",
+  "instructorEmail": "abdullah.limonnnbau@gmail.com",
+  "instructorPhone": {
+    "$numberLong": "5555455555"
+  },
+  "instructorBio": "This is the bio",
+  "instructorCreatedDate": {
+    "$date": "2023-09-05T17:44:11.648Z"
+  },
+  "instructorUpdatedDate": {
+    "$date": "2023-10-07T01:37:41.675Z"
+  },
+  "activeStatus": "active",
+  "isAdmin": false,
+  "password": "$2b$12$pAP.vCUlJ9xGXv.TNk3bKOjy82z3xHZZaW5gW/Cp5GqsuP97ivSIy",
+  "profileImage": "/images/demo1.jpg"
+},
+{
+  "_id": {
+    "$oid": "64f7d2dd8c4b085560206db6"
+  },
+  "userName": "Rabeya",
+  "userRole": "instructor",
+  "instructorEmail": "asdfit@gmail.com",
+  "instructorPhone": 1756668432,
+  "instructorBio": "something extraordinary",
+  "instructorCreatedDate": {
+    "$date": "2023-09-06T01:16:13.440Z"
+  },
+  "instructorUpdatedDate": {
+    "$date": "2023-09-09T17:15:07.726Z"
+  },
+  "activeStatus": "active",
+  "isAdmin": false,
+  "password": "$2b$12$1nvUh9X0EQGxYy6i9U2ahO7MhnHkvurY4LkbvUxkNjqjSkBc8ORKq",
+  "profileImage": "/images/demo1.jpg"
+},
+{
+  "_id": {
+    "$oid": "651b0cc2f962477d1a76298b"
+  },
+  "userName": "limon",
+  "userRole": "instructor",
+  "instructorEmail": "limonlemon12@gmail.com",
+  "instructorPhone": 1756668432,
+  "instructorBio": "Anything",
+  "instructorCreatedDate": {
+    "$date": "2023-10-02T18:32:34.476Z"
+  },
+  "instructorUpdatedDate": {
+    "$date": "2023-10-02T18:32:34.476Z"
+  },
+  "activeStatus": "active",
+  "isAdmin": false,
+  "password": "$2b$12$m1a3Sh60BwBATftNpOOGY.uADKNKkdzfRiRNoohemzhQ/sw/UVBR.",
+  "profileImage": "/images/demo1.jpg"
+},
+{
+  "_id": {
+    "$oid": "6520e2290b27972b8a9752aa"
+  },
+  "userName": "abdullahlimon56",
+  "userRole": "instructor",
+  "instructorEmail": "abdullah.limonbau@gmail.com",
+  "instructorPhone": 555,
+  "instructorBio": "",
+  "instructorCreatedDate": {
+    "$date": "2023-10-07T04:44:25.137Z"
+  },
+  "instructorUpdatedDate": {
+    "$date": "2023-10-07T04:44:25.137Z"
+  },
+  "activeStatus": "inactive",
+  "isAdmin": false,
+  "password": "$2b$12$NHERYl2Z6DOA.j9La.sf4OomEndTB1zBlwGRPeO23f9NcZ9UuXpyi",
+  "profileImage": "/images/demo1.jpg"
+}]

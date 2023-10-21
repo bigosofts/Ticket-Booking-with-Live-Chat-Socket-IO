@@ -1,0 +1,208 @@
+
+  
+  /* Nexus 6P screen simulation */
+  .booking-price{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 50px;
+  }
+  #nexus6p {
+    width: 100% !important;
+    height: 512px;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .profile {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .profile-top {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: block;
+    z-index: 5;
+  }
+  
+  .profile-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    -webkit-clip-path: polygon(0% 0%, 0% 80%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 80%, 100% 100%, 100% 0%);
+    background: white url('http://lorempixel.com/g/300/300/nature/') no-repeat center center;
+  }
+  
+  .profile-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 60, 5, 0.5);
+    -webkit-clip-path: polygon(0% 0%, 0% 80%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 80%, 100% 100%, 100% 0%);
+  }
+  
+  .profile-details {
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 10px 0;
+  }
+  
+  .profile-details * {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .profile-details img {
+    border: 2px solid white;
+    width: 20%;
+    border-radius: 50%;
+    position: relative;
+    left: 5%;
+  }
+  
+  .personal-details {
+    margin-left: 20px;
+    padding: 6px;
+    font-family: 'Lato';
+    font-size: 16px;
+    color: white;
+  }
+  
+  .personal-details * {
+    display: block;
+  }
+  
+  .profile-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: white;
+    z-index: 4;
+  }
+  
+  .profile-bottom .profile-container {
+    display: none;
+    width: 263px;
+    height: 320px;
+    margin: -10px 10px 0px 15px;
+    padding-top: 50px;
+    font-family: "Lato";
+  }
+  
+  .profile-bottom .profile-map {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 308px;
+  }
+  
+  .profile-bottom .profile-container.open {
+    display: block;
+  }
+  
+  .info-card {
+    padding: 0.8em 0;
+  }
+  
+  .info-card::before {
+    margin-left: -5px;
+    content: '•';
+    font-size: 16px;
+    color: #663366;
+  }
+  
+  .menu {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    z-index: 8;
+    position: absolute;
+    top: 42%;
+    right: 5%;
+    transform: translate(0%, -50%);
+    background-color: #663366;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+  }
+  
+  .menu.on {
+    width: 150px;
+    height: 150px;
+    top: 42%;
+    right: 12.2%;
+    transform: translate(50%, -50%);
+    transition: width 0.3s, height 0.3s;
+  }
+  
+  .menu i {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .menu .menu-item {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+  }
+  
+  .menu.on .menu-item {
+    display: block;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .menu.on .menu-item:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-10px, -60px);
+  }
+  
+  .menu.on .menu-item:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50px, -45px);
+  }
+  
+  .menu.on .menu-item:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-55px, 5px);
+  }
+  
+  .menu.on .menu-item:nth-child(4) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-10px, 30px);
+  }
+  
+  .menu.on i#menu-icon {
+    display: none;
+  }
+  

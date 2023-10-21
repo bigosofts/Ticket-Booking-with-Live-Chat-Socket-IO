@@ -1,0 +1,114 @@
+[{
+  "_id": {
+    "$oid": "64f5249e79cde88be537bf29"
+  },
+  "userName": "abdullahlimon",
+  "userRole": "client",
+  "clientEmail": "abdullahh.limonnbau@gmail.com",
+  "clientPhone": 1534327982,
+  "clientCreatedDate": {
+    "$date": "2023-09-04T00:28:14.245Z"
+  },
+  "clientUpdatedDate": {
+    "$date": "2023-10-11T20:28:12.849Z"
+  },
+  "activeStatus": "active",
+  "password": "$2b$12$iG8TvoQhJ0HMedxN1EtrlO1i05zV3mXFRICHfgtEr5B934A81WgQe",
+  "isAdmin": true,
+  "profileImage": "/images/demo3.jpg"
+},
+{
+  "_id": {
+    "$oid": "64f526b979cde88be537bf33"
+  },
+  "userName": "abdullahlimon2",
+  "userRole": "client",
+  "clientEmail": "abdullah.limonbau@gmail.com",
+  "clientPhone": 1756668432,
+  "clientCreatedDate": {
+    "$date": "2023-09-04T00:37:13.347Z"
+  },
+  "clientUpdatedDate": {
+    "$date": "2023-09-07T13:44:34.634Z"
+  },
+  "activeStatus": "inactive",
+  "password": "$2b$12$oMxDxA/jKVbhRqIACsPbWuGxcpcbwJ0hlQ9P..7wvuNMaUn8Xyqym",
+  "isAdmin": false,
+  "profileImage": "/images/demo2.jpg"
+},
+{
+  "_id": {
+    "$oid": "64f531243b380f50e5ca6fbf"
+  },
+  "userName": "something 2",
+  "userRole": "client",
+  "clientEmail": "abdullah@gmail.com",
+  "clientPhone": 156989,
+  "clientCreatedDate": {
+    "$date": "2023-09-04T01:21:40.133Z"
+  },
+  "clientUpdatedDate": {
+    "$date": "2023-09-09T14:48:11.863Z"
+  },
+  "activeStatus": "active",
+  "password": "$2b$12$06UQJOgXf.CVaGOh2uLzh.MPbbtwNPrCgLYFjs28bk1mshXibwDeS",
+  "isAdmin": false,
+  "profileImage": "/images/demo1.jpg"
+},
+{
+  "_id": {
+    "$oid": "64f884f6729beb8ff575825a"
+  },
+  "userName": "rabeya23",
+  "userRole": "client",
+  "clientEmail": "abdulldah@gmail.com",
+  "clientPhone": 156989,
+  "clientCreatedDate": {
+    "$date": "2023-09-06T13:56:06.196Z"
+  },
+  "clientUpdatedDate": {
+    "$date": "2023-09-28T13:42:26.353Z"
+  },
+  "activeStatus": "active",
+  "password": "$2b$12$kxuhnpVoHbfGPLfcbfyP3eIKwTXPyzSh7pblIR8x7FxKjuqhrXrDq",
+  "isAdmin": false,
+  "profileImage": "/images/demo3.jpg"
+},
+{
+  "_id": {
+    "$oid": "6520dd180b27972b8a975288"
+  },
+  "userName": "abdullahlimon3",
+  "userRole": "client",
+  "clientEmail": "abdullah.limoonbau@gmail.com",
+  "clientPhone": 555,
+  "clientCreatedDate": {
+    "$date": "2023-10-07T04:22:48.830Z"
+  },
+  "clientUpdatedDate": {
+    "$date": "2023-10-07T04:22:48.830Z"
+  },
+  "activeStatus": "active",
+  "password": "$2b$12$st4ox2tBw2hBynCSH5RyvO8MUw8.6DCJK/DMHJ/C94M32ZNvlyvJa",
+  "isAdmin": false,
+  "profileImage": "/images/demo1.jpg"
+},
+{
+  "_id": {
+    "$oid": "6520e954ac6f20178ca7651a"
+  },
+  "userName": "limon",
+  "userRole": "client",
+  "clientEmail": "abdullah.limdonbau@gmail.com",
+  "clientPhone": 555,
+  "clientCreatedDate": {
+    "$date": "2023-10-07T05:15:00.951Z"
+  },
+  "clientUpdatedDate": {
+    "$date": "2023-10-07T05:15:00.951Z"
+  },
+  "activeStatus": "active",
+  "password": "$2b$12$zKcBaTIY6.ZNZ2TR3f09R.I0oxFgkxAACeeyhqouwJMmxpfNseEZ2",
+  "isAdmin": false,
+  "profileImage": "/images/demo1.jpg"
+}]

@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(97, 97, 97);
+}
+
+li {
+  list-style: none;
+}
+
+.btns {
+  padding: 10px 20px;
+  margin-right: 6px;
+  background: transparent;
+  border: none;
+  border: 0.6px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #496f82;
+  transition: 0.3s ease-out;
+}
+.btns:hover {
+  scale: 105%;
+}
+.btns-dark {
+  background-color: #4a4a4a;
+}
+.container-admin {
+  background: url("/hero-img/background-custom.jpg");
+  height: 100%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+.main-wrapper-custom {
+  display: flex;
+}
+
+.main-box {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin-top: 88px;
+  padding-bottom: 2.5rem;
+  overflow-y: scroll;
+  min-width: 250px;
+  width: 100%;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}

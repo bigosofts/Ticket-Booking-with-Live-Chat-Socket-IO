@@ -1,0 +1,22 @@
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css');
+.main-board{
+  width: 100%;
+}
+@media screen and (max-width: 400px){
+  .main-board{
+    width: 70%;
+  }
+}
+.card-container {
+    margin-top: 2rem;
+  }
+  .card{
+    transition: 0.3s ease-out;
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.3);
+}
+.card:hover{
+    scale: 105%;
+    box-shadow: 0px 1px 20px #000;
+    cursor: pointer;
+}

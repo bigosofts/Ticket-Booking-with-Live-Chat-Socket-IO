@@ -1,0 +1,64 @@
+.nav-hidden {
+  display: none;
+}
+.dash-nav {
+  display: flex;
+  border-bottom: 2px solid #f3f3f3;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  z-index: 999;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+}
+@media screen and (max-width: 400px) {
+  .dash-nav .nav-container input {
+    width: 130px;
+  }
+}
+
+.nav-container input {
+  padding: 12px 20px;
+  border: none;
+  background: #f7f6f6;
+  outline: none;
+  margin-right: 20px;
+  border-radius: 5px;
+  position: relative;
+  width: 24rem;
+}
+@media screen and (max-width: 660px) {
+  .nav-container input {
+    width: unset;
+  }
+}
+
+.nav-icons {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 2rem;
+}
+
+.logo-container h1 {
+  margin-top: 1.3rem;
+}
+@media screen and (max-width: 830px) {
+  .hiden-tag {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .dash-nav {
+    padding: 0px 20px;
+  }
+  .sidebar-instructor {
+    width: 130px !important;
+  }
+  .sidebar-label-container {
+    font-size: 10px !important;
+  }
+  .sidebar-title {
+    font-size: 16px !important;
+  }
+}
