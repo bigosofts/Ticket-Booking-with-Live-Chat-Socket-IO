@@ -36,7 +36,9 @@ or,
   8. widgets
      
 -Now, using mongoDB compass import the JSON object to
-each of the collection from the "/database" directory of the github repository
+each of the collection.
+
+-You will find demo json object for collections in **"/database"** folder
 
 //Demo Admin Dashboard
 
