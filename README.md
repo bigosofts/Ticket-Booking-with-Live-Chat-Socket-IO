@@ -1,6 +1,9 @@
 # travel-booking-with-chat
 Travel booking app with multiuser chating using MERN stack, NextJS, Socket.io and Redux
 
+This is completely production ready application. Tested on windows vps live server using IIS. It's ready to host and make the site live...
+
+
 
 Recommended NodeJS Version v16.20.1
 
@@ -59,3 +62,4 @@ User: "limon"
 Password: "12345678" or "1234567"
 
 Now you are ready to go...
+
