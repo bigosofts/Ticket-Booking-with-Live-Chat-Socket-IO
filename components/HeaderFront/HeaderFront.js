@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 function HeaderFront({ scrolledStatus }) {
   const router = useRouter();
-//hard refresh
+  //hard refresh
   const hardRefresh = () => {
     if (typeof window !== "undefined") {
       window.location.href = "/";
@@ -10,7 +10,7 @@ function HeaderFront({ scrolledStatus }) {
   };
 
   return (
-    <header className={scrolledStatus ? `scrolled hide` : `hide`}>
+    <header>
       <nav className="header-front">
         <img
           style={{ cursor: "pointer" }}
@@ -20,8 +20,6 @@ function HeaderFront({ scrolledStatus }) {
           className="logo"
         ></img>
         <ul style={{ paddingLeft: "0px" }}>
-          
-
           <li
             style={{ cursor: "pointer" }}
             onClick={() => router.push("/dashboard/user")}

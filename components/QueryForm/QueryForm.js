@@ -300,37 +300,7 @@ const QueryForm = ({ item }) => {
         }}
         className="d-grid gap-2 book-button"
       >
-        {/* {isAdmin.data ? (
-          isAdmin.data.userRole == "instructor" ? (
-            <button
-              onClick={msgFailed}
-              className="btn btn-secondary"
-              type="button"
-              style={{ fontSize: "20px" }}
-            >
-              Request a Guide
-            </button>
-          ) : (
-            <button
-              onClick={orderCreate}
-              className="btn btn-secondary"
-              type="button"
-              style={{ fontSize: "20px" }}
-            >
-              {bookLoad ? "Request already sent" : "Request a Guide"}
-            </button>
-          )
-        ) : (
-          <button
-            onClick={orderCreate}
-            className="btn btn-secondary"
-            type="button"
-            style={{ fontSize: "20px" }}
-          >
-            {bookLoad ? "Request already sent" : "Request a Guide"}
-          </button>
-        )} */}
-
+        
         {item.packageType == "custom" && isAdmin.data.userRole == "client" ? (
           ""
         ) : item.packageType == "custom" &&
@@ -363,7 +333,7 @@ const QueryForm = ({ item }) => {
             className="btn btn-primary"
             type="button"
           >
-            Request a Guide
+            Request Guide in Live Chat
           </button>
         )}
       </div>

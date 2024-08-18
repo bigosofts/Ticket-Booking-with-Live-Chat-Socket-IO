@@ -3,17 +3,11 @@ import "./BookingInfoCard.css";
 import QueryForm from "../QueryForm/QueryForm";
 
 function BookingInfoCard({ filler }) {
-  var isoTime = filler.travelTime;
 
-  var date = new Date(isoTime);
 
-  var options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+ 
 
-  var formattedDate = date.toLocaleDateString("en-US", options);
+  
 
   return (
     <>

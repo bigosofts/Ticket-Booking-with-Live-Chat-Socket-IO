@@ -83,15 +83,12 @@
 }
 
 .travelpage-container .port {
-  margin-top: 100px;
+  padding-top: 250px !important;
   margin-bottom: 100px;
 }
 
 .travelpage-container .port {
-  display: grid;
-  grid-template-columns: 65% 29%;
-  grid-gap: 2%;
-  justify-content: space-around;
+  margin: 0 auto;
 }
 
 .travelpage-container .news_item {
