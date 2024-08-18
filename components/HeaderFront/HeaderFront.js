@@ -20,37 +20,7 @@ function HeaderFront({ scrolledStatus }) {
           className="logo"
         ></img>
         <ul style={{ paddingLeft: "0px" }}>
-          <li className="search">
-            <a href="#search-front">
-              <i className="fa fa-search"></i>
-            </a>
-          </li>
-          <li
-            className="disappear"
-            style={{ cursor: "pointer" }}
-            onClick={() => router.push("/travels")}
-          >
-            <a>Packages</a>
-          </li>
-          <li
-            className="disappear"
-            style={{ cursor: "pointer" }}
-            onClick={() => router.push("/posts")}
-          >
-            <a>Blogs</a>
-          </li>
-          <li
-            style={{ cursor: "pointer" }}
-            onClick={() => router.push("/login")}
-          >
-            <a>Login</a>
-          </li>
-          <li
-            style={{ cursor: "pointer" }}
-            onClick={() => router.push("/register")}
-          >
-            <a>Sign Up</a>
-          </li>
+          
 
           <li
             style={{ cursor: "pointer" }}

@@ -116,22 +116,7 @@ function SignupForm(props) {
     >
       <div className="forms-container">
         <div className="signin-signup">
-          <form action="#" className="sign-in-form">
-            <h2 className="title">Click to sign up as a client</h2>
-            <div className="input-field">
-              <i className="fa fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div className="input-field">
-              <i className="fa fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input
-              type="submit"
-              value="Login"
-              className="btn btn-signup solid"
-            />
-          </form>
+         
 
           <form action="#" className="sign-up-form">
             <h2 className="title"></h2>
@@ -151,37 +136,23 @@ function SignupForm(props) {
             <div
               style={{
                 display: "flex",
-                flexDirection:"column"
+                flexDirection: "column",
               }}
             >
               <div
                 onClick={clickHandlerClient}
                 className="btn btn-signup sign-up-btn"
-              >Click to sign up as a client</div>
-              <div
-                onClick={clickHandlerInstructor}
-                className="btn btn-signup sign-up-btn"
-              >Click to sign up as a guide or organization</div>
+              >
+                Click to sign up as a client
+              </div>
+             
             </div>
           </form>
         </div>
       </div>
       <div className="panels-container">
         <div className="panel left-panel">
-          <div className="content">
-            <h3>New here ?</h3>
-            <p>
-              Don't you have any account yet? Signup as a Client or Sign up as
-              an Instructor if you have qualifications
-            </p>
-            <button
-              onClick={() => router.push("/register")}
-              className="btn btn-signup transparent"
-              id="sign-up-btn"
-            >
-              Sign up
-            </button>
-          </div>
+          
           <img src="" className="image" alt="" />
         </div>
         <div className="panel right-panel">
@@ -197,14 +168,6 @@ function SignupForm(props) {
               id="sign-in-btn"
             >
               Log in
-            </button>
-            <button
-              style={{ marginLeft: "20px", marginTop: "20px" }}
-              onClick={() => hardRefreshCustom("/")}
-              className="btn btn-signup transparent"
-              id="sign-up-btn"
-            >
-              Go to Home
             </button>
           </div>
           <img src="" className="image" alt="" />

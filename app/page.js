@@ -9,9 +9,11 @@ import { isAdmin } from "@/apiservices/checklogin";
 import { useDispatch, useSelector } from "react-redux";
 import { setInitialData } from "./redux/features/isAdmin/isAdminSlice";
 import { getToken, setToken } from "@/helper/sessionHelper";
+import { useRouter } from "next/navigation";
 
 function Page(props) {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
     async function getData() {
@@ -27,34 +29,7 @@ function Page(props) {
     getData();
   }, []);
 
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  
-  return (
-    <>
-      <HeaderFront scrolledStatus={scrolled} />
-      <HeroSection />
-      <FrontBody>
-        <SearchComponent />
-      </FrontBody>
-      <FrontFooter />
-    </>
-  );
+  router.replace("/travels/pk-20246181625232");
 }
 
 export default Page;

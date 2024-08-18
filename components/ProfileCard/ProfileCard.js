@@ -14,9 +14,7 @@ function ProfileCard(props) {
   return (
     <div class="container-profile-card">
       <div class="cover">
-        <div class="profile-pic">
-          <img src="/images/avatar.png" alt="Hero Alom" />
-        </div>
+       
       </div>
       <div class="text-center">
         <h1>{isAdmin.data.userName}</h1>

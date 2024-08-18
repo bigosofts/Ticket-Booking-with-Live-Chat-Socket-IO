@@ -65,9 +65,9 @@ function SigninForm(props) {
         );
 
         mytoast.warning("There is no account with this username");
-        setTimeout(()=>{
+        setTimeout(() => {
           hardRefreshCustom("/register");
-         },2000)
+        }, 2000);
       }
     }
   }
@@ -102,10 +102,9 @@ function SigninForm(props) {
           })
         );
         mytoast.warning("There is no account or Account is not active");
-       setTimeout(()=>{
-        hardRefreshCustom("/register");
-       },2000)
-       
+        setTimeout(() => {
+          hardRefreshCustom("/register");
+        }, 2000);
       }
     }
   }
@@ -135,10 +134,7 @@ function SigninForm(props) {
                 gap: "20px",
               }}
             >
-              <button
-                onClick={clickHandlerClient}
-                className="btn btn-signin"
-              >
+              <button onClick={clickHandlerClient} className="btn btn-signin">
                 Log in as client
               </button>
               <button
@@ -149,44 +145,16 @@ function SigninForm(props) {
               </button>
             </div>
           </form>
-          <form action="#" className="sign-up-form">
-            <h2 className="title">Sign up</h2>
-            <div className="input-field">
-              <i className="fa fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div className="input-field">
-              <i className="fa fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div className="input-field">
-              <i className="fa fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "20px",
-              }}
-            >
-              <input type="submit" className="btn btn-signin" value="Click to sign up as a client" />
-              <input
-                type="submit"
-                className="btn btn-signin"
-                value="Click to sign up as a guide or organization looking for work"
-              />
-            </div>
-          </form>
         </div>
       </div>
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
-            <h3>New here ?</h3>
+            <h3>Demo Instructor Account</h3>
             <p>
-              Don't you have any account yet? Signup as a Client or Sign up as
-              an Instructor if you have qualifications
+              Username: <span style={{ color: "yellow" }}>limon</span>
+              <br></br> Password:{" "}
+              <span style={{ color: "yellow" }}>12345678</span>
             </p>
             <button
               onClick={() => router.push("/register")}
@@ -195,32 +163,10 @@ function SigninForm(props) {
             >
               Sign up
             </button>
-            <button
-              style={{ marginLeft: "20px", marginTop: "20px" }}
-              onClick={() => hardRefreshCustom("/")}
-              className="btn btn-signin transparent"
-              id="sign-up-btn"
-            >
-              Go to Home
-            </button>
           </div>
           <img src="" className="image" alt="" />
         </div>
         <div className="panel right-panel">
-          <div className="content">
-            <h3>One of us ?</h3>
-            <p>
-              Already have Instructor or Client Account With Us? please click
-              sign in button to log in
-            </p>
-            <button
-              onClick={() => router.push("/login")}
-              className="btn btn-signin transparent"
-              id="sign-in-btn"
-            >
-              Log in
-            </button>
-          </div>
           <img src="" className="image" alt="" />
         </div>
       </div>

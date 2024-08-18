@@ -61,25 +61,12 @@ function Nav({ filler, isAdmin }) {
           <img width="100" src="/images/logo.png" alt=""></img>
         </div>
         <div className="nav-container">
-          <input
-            onChange={(e) => clickHandler(e.target.value)}
-            className={`search-input ${data.data.isAdmin ? "nav-hidden" : ""}`}
-            type="text"
-            placeholder={`Hi ${data.data.userName}! Search Here`}
-          />
+         
         </div>
 
         <div className="profile-container">
           <a className="hiden-tag">{data.data.userName}</a>
-          <a
-            title="Profile Setting"
-            style={{ cursor: "pointer" }}
-            onClick={() =>
-              hardRefresh(`/dashboard/${data.data.userName}/setting`)
-            }
-          >
-            <BsFillGearFill className="nav-icons" />
-          </a>
+        
           <a
             title="Log Out!"
             style={{ cursor: "pointer" }}

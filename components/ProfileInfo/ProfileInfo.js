@@ -13,7 +13,6 @@ const ProfileInfo = () => {
     setData(array);
   }, []);
   if (data) {
-   
     if (data[0].userRole == "client") {
       return (
         <div className="">
@@ -22,7 +21,12 @@ const ProfileInfo = () => {
               <div className="image-wrapper">
                 <a>
                   <img
-                    style={{ height: "auto" }}
+                    style={{
+                      height: "400px",
+                      width: "400px",
+                      borderRadius: "50%",
+                      margin: "0px auto",
+                    }}
                     className="post-image-size"
                     src={item.profileImage}
                     alt=""
@@ -100,18 +104,18 @@ const ProfileInfo = () => {
       );
     } else if (data[0].userRole == "instructor") {
       return (
-        
         <div className="">
           {data.map((item, i) => (
             <div hey={i} className="">
               <div className="image-wrapper">
-              <a>
-                <img style={{height:"auto"}} 
-                  className="post-image-size"
-                  src={item.profileImage}
-                  alt=""
-                />
-              </a>
+                <a>
+                  <img
+                    style={{ height: "auto" }}
+                    className="post-image-size"
+                    src={item.profileImage}
+                    alt=""
+                  />
+                </a>
               </div>
               <div className="status-container-post">
                 {item.activeStatus == "active" ? (
@@ -186,7 +190,6 @@ const ProfileInfo = () => {
             </div>
           ))}
         </div>
-    
       );
     }
   }
