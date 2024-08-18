@@ -1,20 +1,28 @@
 "use client";
 import Link from "next/link";
 function PostBlogGrid({ detailData }) {
+  function richtextoutput(text) {
+    return (
+      <div
+        className="richtext"
+        style={{ width: "100%", textAlign: "justify", padding: "20px 40px" }}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    );
+  }
   return (
     <div className="blog4">
       {detailData.map((item) => (
         <Link href={`/posts/${item.postId}`}>
-        <div className="news_item">
-          
+          <div className="news_item">
             <img src={item.postImageLink} alt="" />
-          
 
-          <h2>{item.postTitle.en}</h2>
-          <p>{item.postDescription.en.substring(0, 500)}</p>
+            <h2>{item.postTitle.en}</h2>
 
-          <Link href={`/posts/${item.postId}`}>Read more</Link>
-        </div>
+            {richtextoutput(item.postDescription.en.substring(0, 500))}
+
+            <Link href={`/posts/${item.postId}`}>Read more</Link>
+          </div>
         </Link>
       ))}
 

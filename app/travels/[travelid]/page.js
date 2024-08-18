@@ -1,4 +1,5 @@
 "use client";
+import Accordion from "@/components/AccordionSingle/Accordion";
 import { useState, useEffect, useRef } from "react";
 import "@/assets/css/travels.css";
 import HeaderFront from "@/components/HeaderFront/HeaderFront";
@@ -11,93 +12,94 @@ import {
   setInitialData,
   queryFilter,
 } from "@/app/redux/features/instructorFilter/instructorFilterSlice";
-import { isAdmin } from "@/apiservices/checklogin";
 import ReviewGrid from "@/components/ReviewGrid/ReviewGrid";
 import mytoast from "@/components/toast/toast";
 import Link from "next/link";
 import { getToken } from "@/helper/sessionHelper";
-import {
-  createData as createConversations,
-  selectAllData as selectConversations,
-} from "@/apiservices/conversationapiservices";
+// import {
+//   createData as createConversations,
+//   selectAllData as selectConversations,
+// } from "@/apiservices/conversationapiservices";
 import { useRouter } from "next/navigation";
+import SingleSlider from "@/components/SingleSlider/SingleSlider";
+import Loader from "@/components/loader/Loader";
 
 function SingleTravelPage({ params }) {
+  function goBack() {
+    history.back();
+  }
   const router = useRouter();
-  async function SendMsgRequest(Data) {
-    if (adminData.status == "noToken") {
-      mytoast.danger("You need to login to start Messaging");
-    } else {
-      let conversationID = Data.createdUser + adminData.data.userName;
+  // async function SendMsgRequest(Data) {
+  //   if (adminData.status == "noToken") {
+  //     mytoast.danger("You need to login to start Messaging");
+  //   } else {
+  //     let conversationID = Data.createdUser + adminData.data.userName;
 
-      const resC = await selectConversations(
-        { conversationID: conversationID },
-        { conversationID: true }
-      );
-      if (resC.data.length > 0) {
-        mytoast.warning("Conversation already created. Go to message")
-        
-      } else {
-        let res = await createConversations(
-          conversationID,
-          Data.createdUser,
-          Data.createdUserType,
-          adminData.data.userName,
-          adminData.data.userRole,
-          Data.packageId
-        );
+  //     const resC = await selectConversations(
+  //       { conversationID: conversationID },
+  //       { conversationID: true }
+  //     );
+  //     if (resC.data.length > 0) {
+  //       mytoast.warning("Conversation already created. Go to message");
+  //     } else {
+  //       let res = await createConversations(
+  //         conversationID,
+  //         Data.createdUser,
+  //         Data.createdUserType,
+  //         adminData.data.userName,
+  //         adminData.data.userRole,
+  //         Data.packageId
+  //       );
 
-        if (res) {
-          if (res.status == "Success") {
-            mytoast.success("Request Accepted");
-            setTimeout(() => {
-              router.push(`/dashboard/${adminData.data.userName}/setting`);
-            }, 2000);
-          } else {
-            mytoast.warning("Something Went Wrong, See console");
-            console.log(res);
-          }
-        }
-      }
-    }
-  }
-  async function sendMessage(Data) {
-    if (adminData.status == "noToken") {
-      mytoast.danger("You need to login to start Messaging");
-    } else {
-      let conversationID = adminData.data.userName + Data.createdUser;
-      const resC = await selectConversations(
-        { conversationID: conversationID },
-        { conversationID: true }
-      );
-      if (resC.data.length > 0) {
-        mytoast.warning("Conversation already created. Go to message")
-        
-      } else {
-        let res = await createConversations(
-          conversationID,
-          adminData.data.userName,
-          adminData.data.userRole,
-          Data.createdUser,
-          Data.createdUserType,
-          Data.packageId
-        );
-  
-        if (res) {
-          if (res.status == "Success") {
-            mytoast.success("Request Accepted");
-            setTimeout(() => {
-              router.push(`/dashboard/${adminData.data.userName}/setting`);
-            }, 2000);
-          } else {
-            mytoast.warning("Something Went Wrong, See console");
-            console.log(res);
-          }
-        }
-      }
-      
-    }
-  }
+  //       if (res) {
+  //         if (res.status == "Success") {
+  //           mytoast.success("Request Accepted");
+  //           setTimeout(() => {
+  //             router.push(`/dashboard/${adminData.data.userName}/setting`);
+  //           }, 2000);
+  //         } else {
+  //           mytoast.warning("Something Went Wrong, See console");
+  //           console.log(res);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  // async function sendMessage(Data) {
+  //   if (adminData.status == "noToken") {
+  //     mytoast.danger("You need to login to start Messaging");
+  //   } else {
+  //     let conversationID = adminData.data.userName + Data.createdUser;
+  //     const resC = await selectConversations(
+  //       { conversationID: conversationID },
+  //       { conversationID: true }
+  //     );
+  //     if (resC.data.length > 0) {
+  //       mytoast.warning("Conversation already created. Go to message");
+  //     } else {
+  //       let res = await createConversations(
+  //         conversationID,
+  //         adminData.data.userName,
+  //         adminData.data.userRole,
+  //         Data.createdUser,
+  //         Data.createdUserType,
+  //         Data.packageId
+  //       );
+
+  //       if (res) {
+  //         if (res.status == "Success") {
+  //           mytoast.success("Request Accepted");
+  //           setTimeout(() => {
+  //             router.push(`/dashboard/${adminData.data.userName}/setting`);
+  //           }, 2000);
+  //         } else {
+  //           mytoast.warning("Something Went Wrong, See console");
+  //           console.log(res);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   const adminData = getToken("token_travel");
   const [presetPackage, setPresetPackage] = useState();
@@ -194,7 +196,7 @@ function SingleTravelPage({ params }) {
       try {
         const dataArray2 = await selectDataPublic({
           activeStatus: "active",
-          preset: true,
+          packageType: "package",
         });
         setPresetPackage(dataArray2.data);
       } catch (error) {
@@ -238,6 +240,33 @@ function SingleTravelPage({ params }) {
     return uniqueNumber;
   }
 
+  function richtextoutput(text) {
+    return (
+      <div
+        className="richtext"
+        style={{ width: "90%", textAlign: "justify", margin: "0 auto" }}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    );
+  }
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   if (singleData && presetPackage && adminData) {
     return (
       <>
@@ -245,17 +274,8 @@ function SingleTravelPage({ params }) {
           style={{ marginBottom: "-100px" }}
           className="travelpage-container"
         >
-          <HeaderFront />
-          <div
-            style={{
-              background: `url(${singleData.travelImage[0]})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-            }}
-            className="full_container secbg"
-          >
-            <div className="container-travel-page"></div>
-          </div>
+          <HeaderFront scrolledStatus={scrolled} />
+          <SingleSlider filler={singleData} />
           <section className="Title-single-travel">
             <div className="container-single-travel">
               <div className="left-single-travel-item">
@@ -270,6 +290,28 @@ function SingleTravelPage({ params }) {
                 </div>
               </div>
               <div className="right-single-travel-item">
+                <div className="wrapper-single-title">
+                  <div className="round-icon-div">
+                    <span className="round-icon-design">
+                      <i className="fa fa-calendar"></i>
+                    </span>
+                  </div>
+                  <div className="single-travel-div">
+                    <p>Time of Year</p>
+                    <h3>{singleData.travelTimeTwo}</h3>
+                  </div>
+                </div>
+                <div className="wrapper-single-title">
+                  <div className="round-icon-div">
+                    <span className="round-icon-design">
+                      <i className="fa fa-money"></i>
+                    </span>
+                  </div>
+                  <div className="single-travel-div">
+                    <p>Average Price</p>
+                    <h3>${singleData.price}</h3>
+                  </div>
+                </div>
                 <div className="wrapper-single-title">
                   <div className="round-icon-div">
                     <span className="round-icon-design">
@@ -317,11 +359,31 @@ function SingleTravelPage({ params }) {
                   <div className="news_item">
                     <ImageCarousel filler={singleData} />
                     <h2>{singleData.packageTitle}</h2>
-                    <p>{singleData.travelDescription}</p>
-                    <div className="comments-form">
+
+                    {richtextoutput(singleData.travelDescription)}
+
+                    <Accordion filler={singleData} />
+
+                    <div className="sidebar-travelpage">
+                      <div className="visibility-sidebar2">
+                        <BookingInfoCard filler={singleData} />
+                      </div>
+                    </div>
+
+                    <div
+                      style={{ borderTop: "10px solid rgb(229 229 229)" }}
+                      className="comments-form"
+                    >
                       <ReviewGrid filler={singleData} />
 
-                      <div className="group-title">
+                      <div
+                        style={{
+                          borderTop: "10px solid rgb(229 229 229)",
+                          margin: "0px -40px 0px -40px",
+                          padding: "20px 40px 0px 40px",
+                        }}
+                        className="group-title"
+                      >
                         <h4>Leave A Comments</h4>
                       </div>
                       <form>
@@ -448,17 +510,16 @@ function SingleTravelPage({ params }) {
           </div> */}
                 </div>
 
-                <div
-                  style={{ position: "relative" }}
-                  className="sidebar-travelpage"
-                >
-                  <BookingInfoCard filler={singleData} />
-                  <div
+                <div className="sidebar-travelpage">
+                  <div className="visibility-sidebar">
+                    <BookingInfoCard filler={singleData} />
+                  </div>
+
+                  {/* <div
                     style={{
-                      position: "absolute",
-                      top: "40%",
                       width: "80%",
                       height: "80px",
+                      margin:"auto"
                     }}
                     className="d-grid gap-2 book-button"
                   >
@@ -498,22 +559,28 @@ function SingleTravelPage({ params }) {
                         Talk Guide to Order
                       </button>
                     )}
-                    {/* <button
+                    <button
                       onClick={() => orderCreate(singleData)}
                       style={{ fontSize: "20px" }}
                       className="btn btn-primary"
                      type="button"
                      >
                       {bookLoad ? "Ordered" : "Book Now"}
-                     </button> */}
-                  </div>
+                     </button>
+                  </div> */}
 
                   <div
-                    style={{ position: "absolute", top: "50%", width: "80%" }}
+                    style={{ width: "80%", margin: "auto" }}
                     className="recent"
                   >
-                    <h2 style={{ marginTop: "50px", marginBottom: "40px" }}>
-                      Preset Travels
+                    <h2
+                      style={{
+                        paddingTop: "20px",
+                        marginTop: "50px",
+                        marginBottom: "40px",
+                      }}
+                    >
+                      Other adventures
                     </h2>
                     {presetPackage.slice(0, 3).map((item, i) => (
                       <div key={i} className="images">
@@ -527,7 +594,7 @@ function SingleTravelPage({ params }) {
                   </div>
 
                   <div
-                    style={{ position: "absolute", top: "78%", width: "80%" }}
+                    style={{ width: "80%", margin: "auto" }}
                     className="tags"
                   >
                     <h2>Tags</h2>
@@ -542,11 +609,17 @@ function SingleTravelPage({ params }) {
             </div>
           </section>
         </div>
+        <div onClick={goBack} className="floating-back-button">
+          <i className="fa fa-arrow-left" aria-hidden="true">
+            {" "}
+            Back{" "}
+          </i>
+        </div>
         <FrontFooter />
       </>
     );
   } else {
-    return <div>Loading ... </div>;
+    return <Loader />;
   }
 }
 

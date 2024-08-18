@@ -99,7 +99,7 @@ const ChatBox = () => {
         }
       }
 
-      const text = messageInput.value;
+      const text = messageInput.value ? messageInput.value : "...";
       const attachment = fileUploadData ? fileUploadData.fileUrl : "";
       const sender = isAdmin.data.userName;
       const senderRole = isAdmin.data.userRole;
@@ -113,41 +113,37 @@ const ChatBox = () => {
       const quantity = quantityPackage;
       const xtraPrice = additional;
 
-      if (messageInput.value) {
-        const messageResponse = await createData(
-          text,
-          attachment,
-          sender,
-          senderRole,
-          receiver,
-          receiverRole,
-          conversationID,
-          sendedpackage,
-          acceptedPkg,
-          rejectedPkg,
-          quantity,
-          xtraPrice
-        );
+      const messageResponse = await createData(
+        text,
+        attachment,
+        sender,
+        senderRole,
+        receiver,
+        receiverRole,
+        conversationID,
+        sendedpackage,
+        acceptedPkg,
+        rejectedPkg,
+        quantity,
+        xtraPrice
+      );
 
-        if (messageResponse) {
-          if (messageResponse.status == "Success" && socket) {
-            socket.emit("msg", {
-              message: messageResponse.data,
-            });
+      if (messageResponse) {
+        if (messageResponse.status == "Success" && socket) {
+          socket.emit("msg", {
+            message: messageResponse.data,
+          });
 
-            mytoast.success("message send");
+          mytoast.success("message send");
 
-            document.getElementById("messageInput").value = "";
+          document.getElementById("messageInput").value = "";
 
-            // Clear the file input
-            const fileInput = document.getElementById("fileInput");
-            fileInput.value = "";
-          } else {
-            console.log(messageResponse);
-          }
+          // Clear the file input
+          const fileInput = document.getElementById("fileInput");
+          fileInput.value = "";
+        } else {
+          console.log(messageResponse);
         }
-      } else {
-        mytoast.warning("Write something to send Message");
       }
 
       // Handle the server's response as needed

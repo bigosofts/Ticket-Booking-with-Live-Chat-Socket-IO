@@ -7,10 +7,19 @@ import { createData } from "@/apiservices/travelpackageapiservices";
 import { getToken } from "@/helper/sessionHelper";
 import "../../../@admin/[adminslug]//dashsidebar.css";
 import Nav from "@/Navigation/Nav";
+import { BiUserPlus } from "react-icons/bi";
+import RichTextEditor from "@/components/RichTextEditor/RichTextEditor";
+
+import DOMPurify from "dompurify";
 
 const AddCustomReq = () => {
   const isAdmin = getToken("token_travel");
   const [inputType, setInputType] = useState("text");
+  const [data, setData] = useState("Enter Travel Description Here");
+
+  const [fileData, setFileData] = useState([]);
+  const [imageArray, setImageArray] = useState();
+
   const handleFocus = () => {
     setInputType("date");
   };
@@ -24,13 +33,14 @@ const AddCustomReq = () => {
   const activityref = useRef();
   const difficultyref = useRef();
   const priceref = useRef();
+  const maxPriceref = useRef();
   const durationref = useRef();
   const placeref = useRef();
   const travelTimeref = useRef();
+  const travelTimeref2ref = useRef();
   const previousExperienceref = useRef();
   const equipmentref = useRef();
   const groupSizeref = useRef();
-  const travelDescriptionref = useRef();
   const haveGuidingref = useRef();
   const haveAccomodationref = useRef();
   const haveFoodref = useRef();
@@ -38,6 +48,7 @@ const AddCustomReq = () => {
 
   const clickHandler = async (e) => {
     e.preventDefault();
+
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1;
@@ -61,17 +72,18 @@ const AddCustomReq = () => {
     const activity = activityref.current.value;
     const difficulty = difficultyref.current.value;
     const price = priceref.current.value;
+    const maxPrice = maxPriceref.current.value;
     const duration = durationref.current.value;
     const place = placeref.current.value;
     const travelTime = travelTimeref.current.value;
+    const travelTimeTwo = travelTimeref2ref.current.value;
     const previousExperience = previousExperienceref.current.value;
     const prevExperienceFinal = JSON.parse(previousExperience);
 
-    const equipment = equipmentref.current.value;
-    const equipementFinal = JSON.parse(equipment);
+    const equipment = [`${equipmentref.current.value}`];
 
     const groupSize = groupSizeref.current.value;
-    const travelDescription = travelDescriptionref.current.value;
+    const travelDescription = DOMPurify.sanitize(data);
 
     const haveGuiding = haveGuidingref.current.value;
     const haveGuidingFinal = JSON.parse(haveGuiding);
@@ -84,6 +96,7 @@ const AddCustomReq = () => {
 
     const travelImage = travelImageref.current.value;
     const travelImageFinal = JSON.parse(travelImage);
+
     const reviews = [];
 
     const status = "active";
@@ -105,14 +118,16 @@ const AddCustomReq = () => {
       place,
       travelTime,
       prevExperienceFinal,
-      equipementFinal,
+      equipment,
       groupSize,
       travelDescription,
       haveGuidingFinal,
       haveAccomodationFinal,
       haveFoodFinal,
       travelImageFinal,
-      reviews
+      reviews,
+      maxPrice,
+      travelTimeTwo
     );
 
     if (res) {
@@ -121,6 +136,49 @@ const AddCustomReq = () => {
       myToast.warning("something went wrong");
     }
   };
+
+  useEffect(() => {
+    if (fileData.length > 0) {
+      setImageArray(JSON.stringify(fileData));
+    }
+  }, [fileData]);
+
+  const sendImageHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      let fileInput = document.getElementById("fileInput");
+
+      let fileUploadData;
+
+      if (fileInput.files[0]) {
+        const formData = new FormData();
+        formData.append("fileInput", fileInput.files[0]); // Upload the selected file
+
+        const response = await fetch(`/upload`, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          fileUploadData = "";
+        } else {
+          const data = await response.json();
+          fileUploadData = data;
+
+          setFileData((prev) => [...prev, fileUploadData.fileUrl]);
+        }
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+  };
+
+  function onChangeHandler(e) {
+    e.preventDefault();
+
+    setImageArray(e.target.value);
+  }
 
   return (
     <>
@@ -137,8 +195,29 @@ const AddCustomReq = () => {
       >
         Add Custom Request
       </div>
+
+      <div
+        style={{
+          paddingLeft: "10%",
+          paddingRight: "10%",
+        }}
+      >
+        <label htmlFor="travelDescription">Travel Description:</label>
+        <div
+          style={{ marginBottom: "20px" }}
+          name="travelDescription"
+          className="input-type"
+        >
+          <RichTextEditor value={data} setValue={setData} />
+        </div>
+      </div>
+
       <form
-        style={{ paddingLeft: "10%", paddingRight: "10%" }}
+        style={{
+          paddingLeft: "10%",
+          paddingRight: "10%",
+          paddingBottom: "100px",
+        }}
         className="form-grid-box"
       >
         <div className="input-type">
@@ -196,6 +275,16 @@ const AddCustomReq = () => {
           ></input>
         </div>
         <div className="input-type">
+          <label htmlFor="maxPriceref">Maximum Budget Price (Dollar):</label>
+          <input
+            ref={maxPriceref}
+            className="input-post-type"
+            type="number"
+            name="maxPriceref"
+            placeholder="Enter Maxiumum Travel Price in Dollar"
+          ></input>
+        </div>
+        <div className="input-type">
           <label htmlFor="userNameref">Travel Duration (days):</label>
           <input
             ref={durationref}
@@ -228,6 +317,18 @@ const AddCustomReq = () => {
           ></input>
         </div>
         <div className="input-type">
+          <label htmlFor="travelTimeref2ref">
+            Desired Travel Time In Month:
+          </label>
+          <input
+            ref={travelTimeref2ref}
+            className="input-post-type"
+            type="text"
+            name="travelTimeref2ref"
+            placeholder="Enter Travel like 'april,may,...'"
+          ></input>
+        </div>
+        <div className="input-type">
           <label htmlFor="previousExperienceref">
             Have Previous Experience?
           </label>
@@ -242,7 +343,7 @@ const AddCustomReq = () => {
           </select>
         </div>
         <div className="input-type">
-          <label htmlFor="userNameref">Equipment Array:</label>
+          <label htmlFor="userNameref">What Equipment do you have:</label>
           <textarea
             ref={equipmentref}
             id="equipmentref"
@@ -265,7 +366,7 @@ const AddCustomReq = () => {
         </div>
 
         <div className="input-type">
-          <label htmlFor="haveGuidingref">Have Guiding:</label>
+          <label htmlFor="haveGuidingref">Need Guiding?</label>
           <select
             ref={haveGuidingref}
             className="input-post-type"
@@ -277,7 +378,7 @@ const AddCustomReq = () => {
           </select>
         </div>
         <div className="input-type">
-          <label htmlFor="haveAccomodationref">Have Accomodation:</label>
+          <label htmlFor="haveAccomodationref">Need Accomodation?</label>
           <select
             ref={haveAccomodationref}
             className="input-post-type"
@@ -289,7 +390,7 @@ const AddCustomReq = () => {
           </select>
         </div>
         <div className="input-type">
-          <label htmlFor="haveFoodref">Have Food:</label>
+          <label htmlFor="haveFoodref">Need Food?</label>
           <select
             ref={haveFoodref}
             className="input-post-type"
@@ -303,25 +404,30 @@ const AddCustomReq = () => {
         <div className="input-type">
           <label htmlFor="userNameref">Travel image:</label>
           <textarea
+            value={imageArray}
             ref={travelImageref}
+            onChange={onChangeHandler}
             id="travelImageref"
             name="travelImageref"
             rows="1"
             className="input-post-type"
-            placeholder="Enter travel Image Link"
+            placeholder="Enter multiple image like this: ['/link1', '/link2']"
           ></textarea>
-        </div>
-
-        <div className="input-type">
-          <label htmlFor="userNameref">Description:</label>
-          <textarea
-            ref={travelDescriptionref}
-            id="travelDescription"
-            name="travelDescription"
-            rows="1"
-            className="input-post-type"
-            placeholder="Enter Travel Description"
-          ></textarea>
+          <input
+            style={{ marginTop: "10px" }}
+            accept="image/png image/jpeg image/gif"
+            type="file"
+            id="fileInput"
+          ></input>
+          <button
+            style={{ padding: "0px 10px", marginTop: "10px" }}
+            onClick={sendImageHandler}
+          >
+            Upload Image{" "}
+            <span>
+              <BiUserPlus size={23} />
+            </span>
+          </button>
         </div>
 
         <button

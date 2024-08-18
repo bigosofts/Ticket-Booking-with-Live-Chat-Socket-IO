@@ -11,7 +11,7 @@ import {BiCheckSquare,BiNoEntry, BiShieldQuarter, BiMessageRoundedDetail} from "
         zIndex: 9990,
         className: 'custom-toast',
         clickClosable: true,
-        position: 'top-right',
+        position: 'top-center',
         maxVisibleToasts: 10,
         isReversedOrder: false,
         render:(message)=> <div className='toast-travel'><span className='px-2 inline-block'><BiCheckSquare size={32}/></span>{message}</div>
@@ -25,7 +25,7 @@ import {BiCheckSquare,BiNoEntry, BiShieldQuarter, BiMessageRoundedDetail} from "
         zIndex: 9990,
         className: 'custom-toast',
         clickClosable: true,
-        position: 'top-right',
+        position: 'top-center',
         maxVisibleToasts: 10,
         isReversedOrder: false,
         render:(message)=> <p className='toast-travel'><span className='px-2 inline-block'><BiShieldQuarter size={32}/></span>{message}</p>
@@ -39,7 +39,7 @@ import {BiCheckSquare,BiNoEntry, BiShieldQuarter, BiMessageRoundedDetail} from "
         zIndex: 9990,
         className: 'custom-toast',
         clickClosable: true,
-        position: 'top-right',
+        position: 'top-center',
         maxVisibleToasts: 10,
         isReversedOrder: false,
         render:(message)=> <p className='toast-travel'><span className='px-2 inline-block'><BiNoEntry size={32}/></span>{message}</p>
@@ -52,7 +52,7 @@ import {BiCheckSquare,BiNoEntry, BiShieldQuarter, BiMessageRoundedDetail} from "
         zIndex: 9990,
         className: 'custom-toast',
         clickClosable: true,
-        position: 'top-right',
+        position: 'top-center',
         maxVisibleToasts: 10,
         isReversedOrder: false,
         render:(message)=> <p className='toast-travel'><span className='px-2 inline-block'><BiMessageRoundedDetail size={32}/></span>{message}</p>

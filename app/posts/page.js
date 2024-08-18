@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setInitialData as setinitialPosts } from "@/app/redux/features/postFilter/postFilterSlice";
 import { selectDataPublic as selectPosts } from "@/apiservices/postapiservices";
 import { isAdmin } from "@/apiservices/checklogin";
+import Loader from "@/components/loader/Loader";
 
 function BlogPage(props) {
   const [admin, setAdmin] = useState();
@@ -21,14 +22,11 @@ function BlogPage(props) {
   useEffect(() => {
     async function settingData() {
       try {
-        
         const dataArray3 = await selectPosts({
           activeStatus: "active",
         });
 
-  
         dispatch(setinitialPosts(dataArray3.data));
-        
       } catch (error) {
         console.error("Error in settingData:", error);
       }
@@ -47,25 +45,42 @@ function BlogPage(props) {
     fetchData();
   }, []);
 
-if(filteredPostData){
-  return (
-    <>
-      <div className="travelpage-container">
-        <HeaderFront />
-        <CoverElement/>
+  const [scrolled, setScrolled] = useState(false);
 
-        <BlogSidebarWrap>
-          <PostBlogGrid detailData={filteredPostData} />
-          <PostSideBar />
-        </BlogSidebarWrap>
-      </div>
-      <FrontFooter />
-    </>
-  );
-}else{
-  return <div> Loading ... </div>
-}
- 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  if (filteredPostData) {
+    return (
+      <>
+        <div className="travelpage-container">
+          <HeaderFront scrolledStatus={scrolled} />
+          <CoverElement />
+
+          <BlogSidebarWrap>
+            <PostBlogGrid detailData={filteredPostData} />
+            <PostSideBar />
+          </BlogSidebarWrap>
+        </div>
+        <FrontFooter />
+      </>
+    );
+  } else {
+    return <Loader />;
+  }
 }
 
 export default BlogPage;

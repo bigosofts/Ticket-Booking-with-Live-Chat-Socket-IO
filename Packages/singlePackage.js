@@ -1,96 +1,13 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { createData } from "@/apiservices/orderapiservices";
-import { createData as createConversations } from "@/apiservices/conversationapiservices";
-import { useState } from "react";
-import mytoast from "@/components/toast/toast";
-
-import { useRouter } from "next/navigation";
-import { getToken } from "@/helper/sessionHelper";
-import { selectAllData as selectConversations } from "@/apiservices/conversationapiservices";
+import "./Packages.css";
 
 function SinglePackage({ items }) {
-  const router = useRouter();
-  const [bookLoad, setBookLoad] = useState(false);
-  const isAdmin = getToken("token_travel");
-
   let averageReview =
     items.reviews.reduce((total, review) => total + review.reviewStarCount, 0) /
     items.reviews.length;
 
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth() + 1;
-  const date = currentDate.getDate();
-  const hour = currentDate.getHours();
-  const minute = currentDate.getMinutes();
-  const second = currentDate.getSeconds();
-  const millisecond = currentDate.getMilliseconds();
-  let uniqueNumber = `order-${year}${month}${date}${hour}${minute}${second}${millisecond}`;
-
-  async function orderCreate() {
-    let res = await createData(
-      uniqueNumber,
-      items.packageId,
-      items.createdUser,
-      "New Order",
-      "unpaid",
-      items.price,
-      1,
-      "active",
-      isAdmin.data.userName
-    );
-    if (res) {
-      if (res.status == "noToken") {
-        mytoast.danger("You need to login to place order");
-      } else {
-        setBookLoad(true);
-        mytoast.success("You Order has been delivered");
-      }
-    }
-  }
-  async function createConversation() {
-    if (isAdmin.status == "noToken") {
-      mytoast.danger("You need to login to start Messaging");
-    } else {
-      let userName = isAdmin.data.userName;
-      let userRole = isAdmin.data.userRole;
-      let conversationID;
-      if (userRole == "client") {
-        conversationID = userName + items.createdUser;
-      } else {
-        mytoast.warning("Only client can open conversation");
-      }
-      const resC = await selectConversations(
-        { conversationID: conversationID },
-        { conversationID: true }
-      );
-      if (resC.data.length > 0) {
-        mytoast.warning("Conversation already created. Go to message");
-      } else {
-        let res = await createConversations(
-          conversationID,
-          userName,
-          userRole,
-          items.createdUser,
-          items.createdUserType,
-          items.packageId
-        );
-        if (res) {
-          if (res.status == "Success") {
-            mytoast.success("Request Accepted");
-            setTimeout(() => {
-              router.push(`/dashboard/${userName}/setting`);
-            }, 2000);
-          } else {
-            mytoast.warning("Something Went Wrong, See console");
-            console.log(res);
-          }
-        }
-      }
-    }
-  }
   return (
     <div className="col">
       <div className="theme_common_box_two img_hover">
@@ -104,22 +21,65 @@ function SinglePackage({ items }) {
           </p>
         </div>
         <div className="theme_two_box_content">
-          <h4>
+          <div className="badgeCard">
+            <span
+              style={{
+                width: "100px",
+                backgroundColor: "red",
+                padding: "2px 5px",
+                borderRadius: "5px",
+                color: "white",
+              }}
+            >
+              {items.activity}
+            </span>
+          </div>
+          <h4 style={{ textAlign: "center" }}>
             <Link href={`/travels/${items.packageId}`}>
               {items.packageTitle}
             </Link>
           </h4>
-          <p>
+          <p style={{ textAlign: "center" }}>
             <span className="review_rating">
-              {averageReview}/5 {averageReview < 3 ? "Average" : "Excellent"}
+              {averageReview ? averageReview : 0}/5{" "}
+              {averageReview < 3 ? "Average" : "Excellent"}
             </span>{" "}
             <span className="review_count">
-              ({items.reviews.length} reviewes)
+              ({items.reviews.length} reviews)
             </span>
           </p>
-          <h3>
-            ${items.price} <span>Price starts from</span>
-          </h3>
+          <div
+            className="detail_data"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              padding: "20px 15% 0px 15%",
+            }}
+          >
+            <div>
+              <table id="postGridTable" style={{ width: "100%" }}>
+                
+                <tr>
+                  <td>Difficulty:</td>
+                  <td className="td-right">{items.difficulty}</td>
+                </tr>
+                <tr>
+                  <td>Time of year:</td>
+                  <td className="td-right">{items.travelTimeTwo}</td>
+                </tr>
+                <tr>
+                  <td>Price range:</td>
+                  <td className="td-right">
+                    ${items.price} - ${items.maxPrice}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Duration:</td>
+                  <td className="td-right">{items.duration} days</td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
         <div
           className="theme_two_box_content"
@@ -130,52 +90,18 @@ function SinglePackage({ items }) {
             margin: "auto",
           }}
         >
-          {isAdmin.data ? (
-            isAdmin.data.userRole == "instructor" ? (
-              ""
-            ) : (
-              <button
-                onClick={createConversation}
-                style={{ width: "50%" }}
-                type="button"
-                class="btn btn-info btn-sm"
-              >
-                Talk Guide
-              </button>
-            )
-          ) : (
-            <button
-              onClick={createConversation}
-              style={{ width: "50%" }}
-              type="button"
-              class="btn btn-info btn-sm"
+          <button
+            style={{ width: "50%", margin: "auto" }}
+            type="button"
+            class="single-button btn btn-info btn-sm"
+          >
+            <Link
+              style={{ color: "#fff" }}
+              href={`/travels/${items.packageId}`}
             >
-              Talk Guide
-            </button>
-          )}
-          {isAdmin.data ? (
-            isAdmin.data.userRole == "instructor" ? (
-              ""
-            ) : (
-              <button
-                onClick={orderCreate}
-                style={{ width: "50%", margin: "auto" }}
-                type="button"
-                class="btn btn-info btn-sm"
-              >
-                {bookLoad ? "Ordered" : "Book Now"}
-              </button>
-            )
-          ) : (
-            <button
-              onClick={orderCreate}
-              style={{ width: "50%", margin: "auto" }}
-              type="button"
-              class="btn btn-info btn-sm"
-            >
-              {bookLoad ? "Ordered" : "Book Now"}
-            </button>
-          )}
+              View More
+            </Link>
+          </button>
         </div>
       </div>
     </div>

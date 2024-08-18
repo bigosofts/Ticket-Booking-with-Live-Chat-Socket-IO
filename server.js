@@ -59,12 +59,14 @@ nextApp.prepare().then(() => {
   app.use(hpp());
 
   //Body parser implementation
-  app.use(bodyParser.json());
+
+  app.use(bodyParser.json({ limit: "10mb" }));
+  app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 
   // Mongo DB Database Connection
-  // let URI = `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.fbrulyl.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`;
+  let URI = `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.fbrulyl.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`;
 
-  let URI = `mongodb://127.0.0.1:27017/${process.env.DATABASE_USERNAME}`;
+  // let URI = `mongodb://127.0.0.1:27017/${process.env.DATABASE_USERNAME}`;
 
   let OPTION = {
     autoIndex: true,
@@ -112,7 +114,7 @@ nextApp.prepare().then(() => {
     return nextApp.getRequestHandler()(req, res);
   });
 
-  expressServer.listen(process.env.PORT || 3000, () => {
+  expressServer.listen(process.env.PORT || 5000, () => {
     console.log(">Server Ready on http://localhost:" + process.env.PORT);
   });
 });

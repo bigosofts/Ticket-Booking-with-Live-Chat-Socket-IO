@@ -60,3 +60,13 @@ body {
 
   margin: 0;
 }
+
+.richtext table tr {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 830px) {
+  .disappear {
+    display: none !important;
+  }
+}

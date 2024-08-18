@@ -13,18 +13,24 @@
 }
 
 .logo {
-  width: 100px;
+  width: 150px;
 }
 
 header {
   position: absolute;
   z-index: 9999;
   width: 100%;
-  padding: 0.9rem 0;
+  padding: 0rem 0;
   top: 0;
   left: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.scrolled {
+  position: sticky;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 header .header-front {
@@ -36,10 +42,15 @@ header .header-front {
   align-items: center;
 }
 
+.scrolled .logo {
+  width: 100px;
+}
+
 header ul {
   display: flex;
   list-style: none;
   align-items: center;
+  margin-bottom: 0px;
 }
 header ul a {
   text-decoration: none;
@@ -49,6 +60,10 @@ header ul a {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 0.8 rem;
+}
+.scrolled ul a {
+  color: #4a4a4a !important;
+  text-shadow: #f8e0e0;
 }
 @media screen and (max-width: 380px) {
   header ul a {
@@ -137,6 +152,9 @@ main {
   top: calc(50% - 318px);
   left: calc(50% + 10px);
   z-index: 1;
+  transform: translateX(calc(-50% + 22.8px)) translateY(calc(-50% - 30.21px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 142px;
 }
 .fog-7 {
   position: absolute;
@@ -144,6 +162,9 @@ main {
   width: 1900px;
   top: calc(50% -390px);
   left: calc(50% + 300px);
+  transform: translateX(calc(-50% + 20.52px)) translateY(calc(-50% - 25.44px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 0px;
 }
 .mountain-10 {
   position: absolute;
@@ -151,6 +172,9 @@ main {
   width: 892px;
   top: calc(50% + 69px);
   left: calc(50% + 230px);
+  transform: translateX(calc(-50% + 14.82px)) translateY(calc(-50% - 24.2475px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 529px;
 }
 .fog-6 {
   position: absolute;
@@ -158,6 +182,9 @@ main {
   width: 2450px;
   top: calc(50% + 85px);
   left: calc(50% + 10px);
+  transform: translateX(calc(-50% + 19px)) translateY(calc(-50% - 22.26px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 545px;
 }
 .mountain-9 {
   position: absolute;
@@ -165,6 +192,9 @@ main {
   width: 550px;
   top: calc(50% + 170px);
   left: calc(50% - 610px);
+  transform: translateX(calc(-50% + 9.5px)) translateY(calc(-50% - 12.3225px))
+    perspective(2300px) rotateY(-0.0316667deg) translateZ(8.01px);
+  top: 630px;
 }
 
 .mountain-8 {
@@ -173,6 +203,9 @@ main {
   width: 920px;
   top: calc(50% + 180px);
   left: calc(50% - 202px);
+  transform: translateX(calc(-50% + 7.6px)) translateY(calc(-50% - 8.745px))
+    perspective(2300px) rotateY(-0.0316667deg) translateZ(0px);
+  top: 640px;
 }
 .mountain-5 {
   position: absolute;
@@ -180,6 +213,9 @@ main {
   width: 625px;
   top: calc(50% + 392px);
   left: calc(50% + 130px);
+  transform: translateX(calc(-50% + 6.08px)) translateY(calc(-50% - 5.565px))
+    perspective(2300px) rotateY(-0.158333deg) translateZ(2.678px);
+  top: 825px;
 }
 .mountain-7 {
   position: absolute;
@@ -187,11 +223,14 @@ main {
   width: 538px;
   top: calc(50% + 155px);
   left: calc(50% + 305px);
+  transform: translateX(calc(-50% + 7.6px)) translateY(calc(-50% - 7.95px))
+    perspective(2300px) rotateY(-0.1425deg) translateZ(0px);
+  top: 615px;
 }
 
 .text {
   position: absolute;
-  z-index: 9;
+  z-index: 999;
   top: calc(50% - 100px);
   left: 50%;
   pointer-events: auto;
@@ -201,8 +240,8 @@ main {
   font-family: "Poppins", sans-serif;
 }
 .text h2 {
-  font-weight: 100;
-  font-size: 6.5rem;
+  font-weight: 800;
+  font-size: 6rem;
   line-height: 0.88;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -219,6 +258,9 @@ main {
   width: 408px;
   top: calc(50% + 87px);
   left: calc(50% + 590px);
+  transform: translateX(calc(-50% + 4.94px)) translateY(calc(-50% - 3.975px))
+    perspective(2300px) rotateY(-0.19deg) translateZ(3.33px);
+  top: 547px;
 }
 .fog-4 {
   position: absolute;
@@ -226,6 +268,9 @@ main {
   width: 590px;
   top: calc(50% + 223px);
   left: calc(50% + 60px);
+  transform: translateX(calc(-50% + 10.26px)) translateY(calc(-50% - 9.54px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 683px;
 }
 .mountain-5 {
   position: absolute;
@@ -240,6 +285,9 @@ main {
   width: 1600px;
   top: calc(50% + 160px);
   left: calc(50% - 15px);
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 620px;
 }
 .mountain-4 {
   position: absolute;
@@ -247,6 +295,9 @@ main {
   width: 862px;
   top: calc(50% + 275px);
   left: calc(50% - 450.5px);
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 735px;
 }
 .mountain-3 {
   position: absolute;
@@ -254,6 +305,9 @@ main {
   width: 538px;
   top: calc(50% + 196px);
   left: calc(50% + 831px);
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+    perspective(2300px) rotateY(0deg) translateZ(57.312px);
+  top: 656px;
 }
 .fog-2 {
   position: absolute;
@@ -261,6 +315,9 @@ main {
   width: 1604px;
   top: calc(50% + 174px);
   left: calc(50% - 30px);
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 634px;
 }
 .mountain-2 {
   position: absolute;
@@ -268,6 +325,9 @@ main {
   width: 850px;
   top: calc(50% + 257px);
   left: calc(50% + 412px);
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+    perspective(2300px) rotateY(0deg) translateZ(57.624px);
+  top: 717px;
 }
 .mountain-1 {
   position: absolute;
@@ -275,6 +335,9 @@ main {
   width: 643px;
   top: calc(50% + 24px);
   left: calc(50% - 820px);
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+    perspective(2300px) rotateY(0deg) translateZ(-7.42px);
+  top: 484px;
 }
 
 .sun-rays {
@@ -300,6 +363,9 @@ main {
   width: 2450px;
   top: calc(100% - 355px);
   left: 50%;
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+  top: 564px;
 }
 
 .vignette {
@@ -410,6 +476,12 @@ main {
 }
 
 /*fixing error */
+.card-img-overlay {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: unset !important;
+}
 .card {
   cursor: pointer;
   transition: 0.3s ease-out;
@@ -792,7 +864,7 @@ p:last-child {
 }
 .theme_two_box_content {
   background: #fff;
-  padding: 20px 15px;
+  padding: 0px 15px 20px 15px;
 }
 .theme_two_box_content h4 {
   text-overflow: ellipsis;
@@ -810,12 +882,13 @@ p:last-child {
   outline: 0 !important;
 }
 .theme_two_box_content p {
-  padding: 10px 0px;
+  padding: 0px 0px;
+  margin-bottom: 0px !important;
   font-size: 14px;
 }
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   font-size: 16px;
   line-height: 28px;
   color: var(--paragraph-color);
@@ -854,15 +927,33 @@ p {
 .section-front-res {
   padding-top: 200px;
 }
+.para-text {
+  margin-top: 70px;
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+    perspective(2300px) rotateY(0deg) translateZ(0px);
+}
+
+/* .bg-img{
+  transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px)) perspective(2300px) rotateY(0deg) translateZ(0px); top: 0px;
+} */
+
 @media only screen and (max-width: 600px) {
   .para-hidden {
     display: none !important;
   }
   .container-parallax {
     height: 600px;
+    background-image: url("/images/background.png");
+    background-position: center;
+    background-size: cover;
+  }
+  .bg-img {
+    display: none !important;
   }
   .para-text {
     margin-top: 70px;
+    transform: translateX(calc(-50% + 0px)) translateY(calc(-50% + 0px))
+      perspective(2300px) rotateY(0deg) translateZ(0px);
   }
   .section-front-res {
     padding-top: 70px !important;
@@ -882,7 +973,7 @@ p {
 .card-front-sec {
   height: 450px !important;
   background-size: cover !important;
-  background-position: center !important;
+  background-position: 80% 50% !important;
 }
 @media only screen and (max-width: 768px) {
   .card-front-sec {
@@ -890,4 +981,45 @@ p {
     background-size: cover !important;
     background-position: center !important;
   }
+}
+
+.parallax-about {
+  display: flex;
+  align-items: center;
+  background: url("/images/mountain_hike.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 20%;
+  color: #fff;
+  background-blend-mode: darken;
+  border-radius: 10px;
+}
+
+.got_an {
+  padding: 0px 25%;
+}
+@media only screen and (max-width: 960px) {
+  .got_an {
+    padding: 0px 5%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .got_an {
+    padding: 0px 5%;
+    font-size: 1.2rem;
+  }
+  .parallax-about h2 {
+    font-size: 16px;
+  }
+}
+
+.overlay-image-div {
+  padding: 10px;
+  background: rgba(167, 216, 251, 0.5);
+}
+.overlay-image-div h1,
+.overlay-image-div h5 {
+  color: #000 !important;
 }

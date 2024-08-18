@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { usePathname } from "next/navigation";
 
-function CoverElement({id}) {
+function CoverElement({ id }) {
   const pathname = usePathname();
- 
+
   return (
     <div className="full_container secbg">
       <div className="container-travel-page">

@@ -117,7 +117,7 @@ function SignupForm(props) {
       <div className="forms-container">
         <div className="signin-signup">
           <form action="#" className="sign-in-form">
-            <h2 className="title">Sign in</h2>
+            <h2 className="title">Click to sign up as a client</h2>
             <div className="input-field">
               <i className="fa fa-user"></i>
               <input type="text" placeholder="Username" />
@@ -134,7 +134,7 @@ function SignupForm(props) {
           </form>
 
           <form action="#" className="sign-up-form">
-            <h2 className="title">Sign up</h2>
+            <h2 className="title"></h2>
             <div className="input-field">
               <i className="fa fa-envelope"></i>
               <input type="email" ref={emailref} placeholder="Email" />
@@ -151,22 +151,17 @@ function SignupForm(props) {
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-between",
-                gap: "20px",
+                flexDirection:"column"
               }}
             >
-              <input
+              <div
                 onClick={clickHandlerClient}
-                type="submit"
-                className="btn btn-signup"
-                value="Sign up"
-              />
-              <input
+                className="btn btn-signup sign-up-btn"
+              >Click to sign up as a client</div>
+              <div
                 onClick={clickHandlerInstructor}
-                type="submit"
-                className="btn btn-signup"
-                value="Sign up as instructor"
-              />
+                className="btn btn-signup sign-up-btn"
+              >Click to sign up as a guide or organization</div>
             </div>
           </form>
         </div>
@@ -201,7 +196,7 @@ function SignupForm(props) {
               className="btn btn-signup transparent"
               id="sign-in-btn"
             >
-              Sign in
+              Log in
             </button>
             <button
               style={{ marginLeft: "20px", marginTop: "20px" }}

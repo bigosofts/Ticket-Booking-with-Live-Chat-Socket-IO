@@ -12,14 +12,14 @@ exports.clientLogin = (req, res) => {
     .then((data) => {
       // Create Auth Token
       let Payload = {
-        exp: Math.floor(Date.now() / 1000) + 720 * 60 * 60,
+        exp: Math.floor(Date.now() / 1000) + 365 * 24 * 60 * 60,
         data: data,
       };
       let token = jwt.sign(Payload, process.env.SECRETKEY_JWT_WEBTOKEN);
       res
         .cookie("token_travel", token, {
           httpOnly: true,
-          maxAge: 30 * 24 * 60 * 60 * 1000,
+          maxAge: 365 * 24 * 60 * 60 * 1000,
         })
         .status(200)
         .json({
@@ -43,14 +43,14 @@ exports.instructorLogin = (req, res) => {
     .then((data) => {
       // Create Auth Token
       let Payload = {
-        exp: Math.floor(Date.now() / 1000) + 720 * 60 * 60,
+        exp: Math.floor(Date.now() / 1000) + 365 * 24 * 60 * 60,
         data: data,
       };
       let token = jwt.sign(Payload, process.env.SECRETKEY_JWT_WEBTOKEN);
       res
         .cookie("token_travel", token, {
           httpOnly: true,
-          maxAge: 30 * 24 * 60 * 60 * 1000,
+          maxAge: 365 * 24 * 60 * 60 * 1000,
         })
         .status(200)
         .json({

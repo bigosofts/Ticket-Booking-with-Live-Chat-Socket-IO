@@ -1,5 +1,6 @@
+
 #sidebar-instructor {
-  width: 350px;
+  width: 200px;
   border-right: 2px solid #e5e5e5;
   z-index: 3;
   display: flex;
@@ -9,6 +10,10 @@
   overflow-x: hidden;
   background-color: rgb(73, 182, 211, 0.7);
   padding-top: 100px;
+  transition: 0.3s ease-out;
+}
+.hideDisplaySidebar{
+  width: 0px !important;
 }
 
 #sidebar-instructor::-webkit-scrollbar {

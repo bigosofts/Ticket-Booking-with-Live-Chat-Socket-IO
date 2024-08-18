@@ -109,7 +109,6 @@ function updatePostForm(props) {
     });
   };
 
-
   const onChangeHandler8 = (e) => {
     setInstructors({
       profileImage: e.target.value,
@@ -227,7 +226,6 @@ function updatePostForm(props) {
               id="radioDefault1"
               name="status"
               className="form-check-input mt-1 mr-2"
-              checked
             />
             <label htmlFor="radioDefault1">Active</label>
           </div>
@@ -254,7 +252,6 @@ function updatePostForm(props) {
               id="radioDefault2"
               name="status"
               className="form-check-input mt-1 mr-2"
-              checked
             />
             <label
               htmlFor="radioDefault2"

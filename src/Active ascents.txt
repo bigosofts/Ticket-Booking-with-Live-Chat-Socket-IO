@@ -1,0 +1,27 @@
+Email Account: activeascents20@gmail.com
+Email Pass: $active@ascents!
+
+Data server
+user: activeascent
+pass: $Active@Ascents!2023
+
+remote Desktop connection
+IP: 72.167.134.24
+Username: activeascent
+pass: deUPf0IEwB%K
+
+Cloudflare.com
+email: activeascents20@gmail.com
+pass: $active@ascents!2023
+
+Godaddy ns:
+ns51.domaincontrol.com
+
+ns52.domaincontrol.com
+
+Cloudflare ns:
+asa.ns.cloudflare.com
+grant.ns.cloudflare.com
+
+imgur account for hero-section
+gmail: activeascents20@gmail.com

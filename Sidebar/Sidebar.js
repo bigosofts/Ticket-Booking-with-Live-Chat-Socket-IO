@@ -8,15 +8,15 @@ import Difficulty from "./Difficulty/Difficulty";
 import Price from "./Price/Price";
 import Duration from "./Duration/Duration";
 
-function Sidebar({ filler }) {
+function Sidebar({ filler, hide }) {
   useEffect(() => {
     import("./Sidebar.css");
   }, []);
   return (
     <>
-      <section id="sidebar-instructor">
+      <section id="sidebar-instructor" className={hide ? "hideDisplaySidebar" : ""}>
         <Date filler={filler} />
-        <Preset filler={filler} />
+        {/* <Preset filler={filler} /> */}
         <Country filler={filler} />
         <Activity filler={filler} />
         <Difficulty filler={filler} />

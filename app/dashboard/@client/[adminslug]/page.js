@@ -16,11 +16,14 @@ import { getToken } from "@/helper/sessionHelper.js";
 
 function ClientPage({ params }) {
   const router = useRouter();
+  const [hide, setHide] = useState(true);
+  function hideChanger(){
+    setHide((prev)=> !prev);
+  }
 
   const data6 = getToken("token_travel");
-  
+
   const data5 = useSelector((state) => state.isAdmin.value);
-  
 
   let data = data6 ? data6 : data5;
 
@@ -36,17 +39,16 @@ function ClientPage({ params }) {
     import("../../../../src/source/mdb.min.js");
     async function settingData(userName) {
       try {
-        if(data.data.userRole == "client"){
+        if (data.data.userRole == "client") {
           const dataArray = await selectData({ activeStatus: "active" });
           let newDataArray = dataArray.data.filter(
             (item) =>
               !(item.packageType == "custom" && item.createdUser !== userName)
           );
-  
+
           dispatch(setInitialData(newDataArray));
           setActualData(newDataArray);
         }
-        
       } catch (error) {
         console.error("Error in settingData:", error);
       }
@@ -64,8 +66,8 @@ function ClientPage({ params }) {
           <div className="container-admin">
             <Nav isAdmin={data} filler={actualData} />
             <div className="main-wrapper-custom">
-              <Sidebar filler={actualData} />
-              <Packages filler={filteredPackageData}>
+              <Sidebar filler={actualData} hide={hide}/>
+              <Packages filler={filteredPackageData} hideChanger={hideChanger}>
                 <Recommended filler={actualData} />
               </Packages>
             </div>

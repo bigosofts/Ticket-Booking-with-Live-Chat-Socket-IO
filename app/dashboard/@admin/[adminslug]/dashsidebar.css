@@ -405,7 +405,7 @@ body {
   position: relative;
   background-color: var(--color-bg);
   margin-top: 0px;
-  padding-top: 80px;
+  padding-top: 120px;
   background-color: rgb(73, 182, 211, 0.7);
 }
 
@@ -521,3 +521,4 @@ body {
   font-size: 1.1rem;
   z-index: 999;
 }
+

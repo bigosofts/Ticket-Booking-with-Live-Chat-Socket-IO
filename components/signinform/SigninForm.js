@@ -138,16 +138,14 @@ function SigninForm(props) {
               <button
                 onClick={clickHandlerClient}
                 className="btn btn-signin"
-                value="Signin"
               >
-                Login
+                Log in as client
               </button>
               <button
                 onClick={clickHandlerInstructor}
                 className="btn btn-signin"
-                value="Signin as instructor"
               >
-                Login as Instructor
+                Log in as Instructor
               </button>
             </div>
           </form>
@@ -172,11 +170,11 @@ function SigninForm(props) {
                 gap: "20px",
               }}
             >
-              <input type="submit" className="btn btn-signin" value="Sign up" />
+              <input type="submit" className="btn btn-signin" value="Click to sign up as a client" />
               <input
                 type="submit"
                 className="btn btn-signin"
-                value="Sign up as instructor"
+                value="Click to sign up as a guide or organization looking for work"
               />
             </div>
           </form>
@@ -220,7 +218,7 @@ function SigninForm(props) {
               className="btn btn-signin transparent"
               id="sign-in-btn"
             >
-              Sign in
+              Log in
             </button>
           </div>
           <img src="" className="image" alt="" />

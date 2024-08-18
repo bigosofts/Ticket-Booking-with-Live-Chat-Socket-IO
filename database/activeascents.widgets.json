@@ -5,18 +5,18 @@
   "widgetName": "front_client_instructor",
   "widgetPayload": [
     {
-      "title": "For Client",
-      "description": "Looking for an Adventure !",
+      "title": "Clients",
+      "description": "Have an adventure in mind? Choose from either our pre-built packages or create your own and we will partner you with a guide.",
       "link": "/register",
       "time": "2023-09-19",
-      "image": "/images/demo2.jpg"
+      "image": "/images/demo5.jpg"
     },
     {
-      "title": "For Instructor",
-      "description": "Got qualifications and looking to take people on Adventure ?",
+      "title": "Instructors",
+      "description": "Looking for work? If you have qualifications and want to take clients on adventures, click on the link to see what adventures clients want.",
       "link": "/register",
       "time": "2023-09-19",
-      "image": "/images/demo7.jpg"
+      "image": "/images/demo9.webp"
     }
   ],
   "activeStatus": "active"
@@ -25,66 +25,135 @@
   "_id": {
     "$oid": "6509b4c62078335bc003b936"
   },
-  "widgetName": "why_choose",
+  "widgetName": "about_us",
   "widgetPayload": [
     {
-      "icon": "fa fa-lightbulb-o",
-      "text": "Creative"
-    },
-    {
-      "icon": "fa fa-cutlery",
-      "text": "Hungry"
-    },
-    {
-      "icon": "fa fa-lightbulb-o",
-      "text": "Creative"
-    },
-    {
-      "icon": "fa fa-lightbulb-o",
-      "text": "Creative"
-    },
-    {
-      "icon": "fa fa-smile-o",
-      "text": "Sleepy"
-    },
-    {
-      "icon": "fa fa-heart",
-      "text": "love"
-    },
-    {
-      "icon": "fa fa-lightbulb-o",
-      "text": "Creative"
-    },
-    {
-      "icon": "fa fa-bolt",
-      "text": "Energetic"
+      "text": "Here at Active Ascents we pride ourselves on helping clients to find adventures and guides to find work. We love the outdoors and all the activities that can be done with it, this is why we believe in creating a simple and easy to use platform which reduces the stress of finding work and going on the adventures you desire.",
+      "image": "/images/logo.png"
     }
   ],
   "activeStatus": "active"
 },
 {
   "_id": {
-    "$oid": "6509bfa22078335bc003ba0c"
+    "$oid": "6543c3ea817a5bdd65939f63"
   },
-  "widgetName": "our_partner",
+  "widgetName": "footer_menu_bottom_one",
   "widgetPayload": [
     {
-      "logo": "/hero-img/logo-slider.png"
+      "text": "link1",
+      "link": "/something1"
     },
     {
-      "logo": "/hero-img/log-slider-2.png"
+      "text": "link2",
+      "link": "/something2"
     },
     {
-      "logo": "/hero-img/logo-slider.png"
+      "text": "link3",
+      "link": "/something3"
     },
     {
-      "logo": "/hero-img/log-slider-2.png"
+      "text": "link4",
+      "link": "/something4"
     },
     {
-      "logo": "/hero-img/logo-slider.png"
+      "text": "link5",
+      "link": "/something5"
     },
     {
-      "logo": "/hero-img/log-slider-2.png"
+      "text": "link6",
+      "link": "/something6"
+    },
+    {
+      "text": "link7",
+      "link": "/something7"
+    }
+  ],
+  "activeStatus": "active"
+},
+{
+  "_id": {
+    "$oid": "6543c3f9817a5bdd65939f66"
+  },
+  "widgetName": "footer_menu_bottom_two",
+  "widgetPayload": [
+    {
+      "text": "link1",
+      "link": "/something1"
+    },
+    {
+      "text": "link2",
+      "link": "/something2"
+    },
+    {
+      "text": "link3",
+      "link": "/something3"
+    },
+    {
+      "text": "link4",
+      "link": "/something4"
+    },
+    {
+      "text": "link5",
+      "link": "/something5"
+    },
+    {
+      "text": "link6",
+      "link": "/something6"
+    },
+    {
+      "text": "link7",
+      "link": "/something7"
+    }
+  ],
+  "activeStatus": "active"
+},
+{
+  "_id": {
+    "$oid": "6543d333817a5bdd6593a030"
+  },
+  "widgetName": "contact",
+  "widgetPayload": [
+    {
+      "icon": "fa-home",
+      "text": "YO301AA, York, North Yorkshire, United Kingdom"
+    },
+    {
+      "icon": "fa-envelope",
+      "text": "Info@activeascnets.com"
+    },
+    {
+      "icon": "fa-print",
+      "text": "Demo num: 123456"
+    }
+  ],
+  "activeStatus": "active"
+},
+{
+  "_id": {
+    "$oid": "6543d986817a5bdd6593a0c1"
+  },
+  "widgetName": "social_media",
+  "widgetPayload": [
+    {
+      "icon": "fa-facebook-f",
+      "link": "/demolink"
+    },
+    {
+      "icon": "fa-twitter",
+      "link": "/demolink"
+    },
+    {
+      "icon": "fa-google",
+      "link": "/demolink"
+    },
+    {
+      "icon": "fa-instagram",
+      "link": "/demolink"
+    },
+    {
+      "icon": "fa-heart",
+      "link": "/demolink"
     }
   ],
   "activeStatus": "active"

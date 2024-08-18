@@ -16,7 +16,7 @@ function Recommended({ filler }) {
         <SingleRecommended
           isAdmin={isAdmin}
           filler={filler}
-          click={"View All"}
+          click={"Reset Filters"}
         />
         <SingleRecommended
           isAdmin={isAdmin}
@@ -52,7 +52,7 @@ function Recommended({ filler }) {
           }
           className="btns btns-dark"
         >
-          Add New Custom Package{" "}
+          Create a custom adventure request{" "}
           <span className="px-2">
             <AiOutlineFolderAdd />
           </span>

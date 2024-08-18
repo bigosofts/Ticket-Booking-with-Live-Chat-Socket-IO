@@ -7,6 +7,7 @@ import "../assets/css/stylefront.css";
 import "../Navigation/Nav.css";
 import Providers from "./redux/provider";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

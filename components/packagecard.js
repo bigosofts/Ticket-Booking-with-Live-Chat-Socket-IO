@@ -47,13 +47,13 @@ function PackageCard(props) {
           {props.fromupdateform.data.map((item, i) => (
             <div hey={i} className="post-loop-package-div">
               <div className="image-wrapper">
-              <a href="#">
-                <img
-                  className="post-image-size"
-                  src={item.travelImage[0]}
-                  alt=""
-                />
-              </a>
+                <a href="#">
+                  <img
+                    className="post-image-size"
+                    src={item.travelImage[0]}
+                    alt=""
+                  />
+                </a>
               </div>
               <div className="status-container-post">
                 {item.activeStatus == "active" ? (
@@ -195,6 +195,10 @@ function PackageCard(props) {
                 <p className="item-display-p"> Price: {item.price}</p>
                 <p className="item-display-p">
                   {" "}
+                  Maximum Price: {item.maxPrice}
+                </p>
+                <p className="item-display-p">
+                  {" "}
                   Duration: {item.duration} days
                 </p>
                 <p className="item-display-p"> place: {item.place}</p>
@@ -202,6 +206,12 @@ function PackageCard(props) {
                   {" "}
                   Travel time: {new Date(item.travelTime).toLocaleDateString()}
                 </p>
+                <p className="item-display-p">
+                  {" "}
+                  Second Travel time:{" "}
+                  {new Date(item.travelTimeTwo).toLocaleDateString()}
+                </p>
+                
                 <p className="item-display-p">
                   {" "}
                   Have Pevious Experience:{" "}
@@ -254,13 +264,13 @@ function PackageCard(props) {
           {data.data.map((item, i) => (
             <div hey={i} className="post-loop-package-div">
               <div className="image-wrapper">
-              <a href="#">
-                <img
-                  className="post-image-size"
-                  src={item.travelImage[0]}
-                  alt=""
-                />
-              </a>
+                <a href="#">
+                  <img
+                    className="post-image-size"
+                    src={item.travelImage[0]}
+                    alt=""
+                  />
+                </a>
               </div>
               <div className="status-container-post">
                 {item.activeStatus == "active" ? (
@@ -401,6 +411,10 @@ function PackageCard(props) {
                 <p className="item-display-p"> Price: {item.price}</p>
                 <p className="item-display-p">
                   {" "}
+                  Maximum Price: {item.maxPrice}
+                </p>
+                <p className="item-display-p">
+                  {" "}
                   Duration: {item.duration} days
                 </p>
                 <p className="item-display-p"> place: {item.place}</p>
@@ -408,6 +422,12 @@ function PackageCard(props) {
                   {" "}
                   Travel time: {new Date(item.travelTime).toLocaleDateString()}
                 </p>
+                <p className="item-display-p">
+                  {" "}
+                  Second Travel time:{" "}
+                  {new Date(item.travelTimeTwo).toLocaleDateString()}
+                </p>
+               
                 <p className="item-display-p">
                   {" "}
                   Have Pevious Experience:{" "}

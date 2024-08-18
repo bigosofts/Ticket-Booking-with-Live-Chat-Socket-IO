@@ -1,73 +1,61 @@
-exports.selectData = async(query, projection) => {
+exports.selectData = async (query, projection) => {
+  const payloaddata = {
+    query: query,
+    projection: projection,
+  };
+  const res = await fetch("/apis/v1/select-packages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payloaddata),
+  });
 
-    
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
 
-    const payloaddata ={
-        query:query,
-        projection:projection
-    };
-    const res = await fetch('/apis/v1/select-packages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payloaddata),
-    })
+  return res.json();
+};
+exports.selectDataPublic = async (query, projection) => {
+  const payloaddata = {
+    query: query,
+    projection: projection,
+  };
+  const res = await fetch("/apis/v1/select-packages-public", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payloaddata),
+  });
 
-    if(!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error('Failed to fetch data')
-    }
-   
-    return res.json()
-}
-exports.selectDataPublic = async(query, projection) => {
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
 
-    
+  return res.json();
+};
 
-    const payloaddata ={
-        query:query,
-        projection:projection
-    };
-    const res = await fetch('/apis/v1/select-packages-public', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payloaddata),
-    })
+exports.deleteData = async (id) => {
+  const res = await fetch(`/apis/v1/delete-package/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-    if(!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error('Failed to fetch data')
-    }
-   
-    return res.json()
-}
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
 
+  return res.json();
+};
 
-exports.deleteData = async(id) => {
-
-   
-
-
-    const res = await fetch(`/apis/v1/delete-package/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json' 
-        }
-    })
-
-    if(!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error('Failed to fetch data')
-    }
-   
-    return res.json()
-}
-
-
-exports.createData = async(
+exports.createData = async (
   packageId,
   packageType,
   packageTitle,
@@ -91,55 +79,57 @@ exports.createData = async(
   haveAccomodation,
   haveFood,
   travelImage,
-  reviews) => {
-
-    const aboutdata={
-      packageId,
-      packageType,
-      packageTitle,
-      createdUser,
-      createdUserType,
-      activeStatus,
-      preset,
-      presetUsers,
-      country,
-      activity,
-      difficulty,
-      price,
-      duration,
-      place,
-      travelTime,
-      previousExperience,
-      equipment,
-      groupSize,
-      travelDescription,
-      haveGuiding,
-      haveAccomodation,
-      haveFood,
-      travelImage,
-      reviews
- }
- 
+  reviews,
+  maxPrice,
+  travelTimeTwo
+) => {
+  const aboutdata = {
+    packageId,
+    packageType,
+    packageTitle,
+    createdUser,
+    createdUserType,
+    activeStatus,
+    preset,
+    presetUsers,
+    country,
+    activity,
+    difficulty,
+    price,
+    duration,
+    place,
+    travelTime,
+    previousExperience,
+    equipment,
+    groupSize,
+    travelDescription,
+    haveGuiding,
+    haveAccomodation,
+    haveFood,
+    travelImage,
+    reviews,
+    maxPrice,
+    travelTimeTwo,
+  };
 
   const res = await fetch(`/apis/v1/create-package`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(aboutdata)
-  })
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(aboutdata),
+  });
 
-  if(!res.ok) {
+  if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data");
     console.log(res);
   }
- 
-  return res.json()
-}
 
+  return res.json();
+};
 
-exports.updateData = async(
+exports.updateData = async (
   idValue,
   packageId,
   packageType,
@@ -164,12 +154,11 @@ exports.updateData = async(
   haveAccomodation,
   haveFood,
   travelImage,
-  reviews
+  reviews,
+  maxPrice,
+  travelTimeTwo
 ) => {
-
-  
-
-  const aboutdata={
+  const aboutdata = {
     _id: idValue,
     packageId,
     packageType,
@@ -194,20 +183,22 @@ exports.updateData = async(
     haveAccomodation,
     haveFood,
     travelImage,
-    reviews
- }
+    reviews,
+    maxPrice,
+    travelTimeTwo,
+  };
 
   const res = await fetch(`/apis/v1/update-package`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(aboutdata)
-  })
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(aboutdata),
+  });
 
-  if(!res.ok) {
+  if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data");
   }
-  return res.json()
-}
+  return res.json();
+};

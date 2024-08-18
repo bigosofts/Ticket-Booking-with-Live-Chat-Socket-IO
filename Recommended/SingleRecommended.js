@@ -12,7 +12,7 @@ function SingleRecommended({ click, filler, isAdmin }) {
   const dispatch = useDispatch();
 
   function clickHandler() {
-    if (click == "View All") {
+    if (click == "Reset Filters") {
       dispatch(setInitialData(filler));
       mytoast.success("All of the Packages and Customs are Loaded");
     } else if (click == "All Package") {

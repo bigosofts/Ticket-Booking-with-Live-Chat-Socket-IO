@@ -13,6 +13,10 @@ import { getToken } from "@/helper/sessionHelper.js";
 
 function InstructorPage({ params }) {
   const router = useRouter();
+  const [hide, setHide] = useState(true);
+  function hideChanger() {
+    setHide((prev) => !prev);
+  }
 
   const data6 = getToken("token_travel");
   console.log(data6 + "data6");
@@ -32,7 +36,7 @@ function InstructorPage({ params }) {
     import("../../../../src/source/mdb.min.js");
     async function settingData(userName) {
       try {
-        if(data.data.userRole == "instructor"){
+        if (data.data.userRole == "instructor") {
           const dataArray = await selectData({
             activeStatus: "active",
           });
@@ -40,11 +44,10 @@ function InstructorPage({ params }) {
             (item) =>
               !(item.packageType == "package" && item.createdUser !== userName)
           );
-  
+
           dispatch(setInitialData(newDataArray));
           setActualData(newDataArray);
         }
-        
       } catch (error) {
         console.error("Error in settingData:", error);
       }
@@ -62,8 +65,8 @@ function InstructorPage({ params }) {
           <div className="container-admin">
             <Nav isAdmin={data} filler={actualData} />
             <div className="main-wrapper-custom">
-              <Sidebar filler={actualData} />
-              <Packages filler={filteredPackageData}>
+              <Sidebar filler={actualData} hide={hide} />
+              <Packages filler={filteredPackageData} hideChanger={hideChanger}>
                 <Recommended filler={actualData} />
               </Packages>
             </div>

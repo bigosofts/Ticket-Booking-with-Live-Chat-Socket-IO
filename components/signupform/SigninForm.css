@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-
 .container-slide-signin {
   position: relative;
   width: 100%;
-  background:url("/images/background.png");
+  background: url("/images/background.png");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -31,7 +30,8 @@
   z-index: 5;
 }
 
-.sign-in-form,.sign-up-form {
+.sign-in-form,
+.sign-up-form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,7 +323,6 @@ form.sign-in-form {
   }
 
   .btn.transparent {
-   
     height: 35px;
     font-size: 0.7rem;
   }
@@ -340,7 +339,7 @@ form.sign-in-form {
   }
 
   .container-slide-signin.sign-up-mode:before {
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 95%);
     bottom: 32%;
     right: initial;
   }
@@ -382,7 +381,7 @@ form.sign-in-form {
   }
 
   .container-slide-signin:before {
-    bottom: 72%;
+    bottom: 60%;
     left: 50%;
   }
 
@@ -392,3 +391,10 @@ form.sign-in-form {
   }
 }
 
+.sign-up-btn {
+  max-width: 380px;
+  height: auto;
+}
+.sign-up-btn:hover {
+  color: #fff;
+}

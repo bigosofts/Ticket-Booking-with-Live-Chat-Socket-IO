@@ -88,28 +88,28 @@
   },
   "packageId": "pk03",
   "packageType": "package",
-  "packageTitle": "Adventure Islands",
+  "packageTitle": "Atlantic Crossing",
   "packageCreatedDate": {
     "$date": "2023-08-19T06:24:38.023Z"
   },
   "packageUpdatedDate": {
-    "$date": "2023-08-19T06:24:38.023Z"
+    "$date": "2023-11-03T17:55:52.113Z"
   },
-  "createdUser": "limon",
+  "createdUser": "activeascents",
   "createdUserType": "instructor",
   "activeStatus": "active",
   "preset": true,
   "presetUsers": [
     "Max"
   ],
-  "country": "USA",
-  "activity": "hiking",
+  "country": "Atlantic Ocean",
+  "activity": "Sailing",
   "difficulty": "high",
-  "price": 3000,
-  "duration": 5,
-  "place": "California",
+  "price": 20000,
+  "duration": 25,
+  "place": "Atlantic Ocean",
   "travelTime": {
-    "$date": "2023-08-19T05:21:56.781Z"
+    "$date": "2023-10-03T00:00:00.000Z"
   },
   "previousExperience": true,
   "equipment": [
@@ -120,7 +120,23 @@
   "haveGuiding": true,
   "haveAccomodation": true,
   "haveFood": true,
-  "travelImage": "/images/demo1.jpg"
+  "travelImage": [
+    "/images/demo1.jpg"
+  ],
+  "maxPrice": 49999,
+  "reviews": [],
+  "travelTimeFive": {
+    "$date": "2023-04-03T00:00:00.000Z"
+  },
+  "travelTimeFour": {
+    "$date": "2023-01-03T00:00:00.000Z"
+  },
+  "travelTimeThree": {
+    "$date": "2023-12-03T00:00:00.000Z"
+  },
+  "travelTimeTwo": {
+    "$date": "2023-11-03T00:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -128,28 +144,28 @@
   },
   "packageId": "pk04",
   "packageType": "package",
-  "packageTitle": "Adventure Islands",
+  "packageTitle": "Glen Etive",
   "packageCreatedDate": {
     "$date": "2023-08-19T06:24:48.380Z"
   },
   "packageUpdatedDate": {
-    "$date": "2023-08-19T06:24:48.380Z"
+    "$date": "2023-11-03T17:53:29.938Z"
   },
-  "createdUser": "limon",
+  "createdUser": "activeascents",
   "createdUserType": "instructor",
   "activeStatus": "active",
   "preset": true,
   "presetUsers": [
     "Max"
   ],
-  "country": "USA",
-  "activity": "hiking",
+  "country": "Scotland",
+  "activity": "Kayaking",
   "difficulty": "high",
-  "price": 3000,
-  "duration": 5,
-  "place": "California",
+  "price": 1000,
+  "duration": 18,
+  "place": "Scotland",
   "travelTime": {
-    "$date": "2023-08-19T05:22:56.781Z"
+    "$date": "2023-12-03T00:00:00.000Z"
   },
   "previousExperience": true,
   "equipment": [
@@ -160,7 +176,23 @@
   "haveGuiding": true,
   "haveAccomodation": true,
   "haveFood": true,
-  "travelImage": "/images/demo1.jpg"
+  "travelImage": [
+    "/images/demo1.jpg"
+  ],
+  "maxPrice": 3000,
+  "reviews": [],
+  "travelTimeFive": {
+    "$date": "2023-04-03T00:00:00.000Z"
+  },
+  "travelTimeFour": {
+    "$date": "2023-03-03T00:00:00.000Z"
+  },
+  "travelTimeThree": {
+    "$date": "2023-02-03T00:00:00.000Z"
+  },
+  "travelTimeTwo": {
+    "$date": "2023-01-03T00:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -168,28 +200,80 @@
   },
   "packageId": "pk05",
   "packageType": "package",
-  "packageTitle": "Adventure Islands",
+  "packageTitle": "Whistler Bike Park",
   "packageCreatedDate": {
     "$date": "2023-08-19T06:25:05.792Z"
   },
   "packageUpdatedDate": {
-    "$date": "2023-10-11T17:31:31.903Z"
+    "$date": "2023-11-07T03:34:10.285Z"
   },
-  "createdUser": "limon",
+  "createdUser": "activeascents",
   "createdUserType": "instructor",
   "activeStatus": "active",
   "preset": true,
   "presetUsers": [
     "Max"
   ],
-  "country": "USA",
+  "country": "Canada",
   "activity": "hiking",
-  "difficulty": "high",
-  "price": 3000,
-  "duration": 5,
-  "place": "California",
+  "difficulty": "medium",
+  "price": 100,
+  "duration": 1,
+  "place": "Canada",
   "travelTime": {
-    "$date": "2023-08-19T05:23:56.781Z"
+    "$date": "2023-05-03T00:00:00.000Z"
+  },
+  "previousExperience": true,
+  "equipment": [
+    "raincoat"
+  ],
+  "groupSize": 3,
+  "travelDescription": "This is travel Description",
+  "haveGuiding": true,
+  "haveAccomodation": true,
+  "haveFood": true,
+  "travelImage": [
+    "/images/demo7.jpg"
+  ],
+  "reviews": [],
+  "maxPrice": 149,
+  "travelTimeFive": {
+    "$date": "2023-10-03T00:00:00.000Z"
+  },
+  "travelTimeFour": {
+    "$date": "2023-09-03T00:00:00.000Z"
+  },
+  "travelTimeThree": {
+    "$date": "2023-07-03T00:00:00.000Z"
+  },
+  "travelTimeTwo": "May, Oct"
+},
+{
+  "_id": {
+    "$oid": "64e060d969f1242446b9840b"
+  },
+  "packageId": "pk06",
+  "packageType": "package",
+  "packageTitle": "Rjukan",
+  "packageCreatedDate": {
+    "$date": "2023-08-19T06:27:37.634Z"
+  },
+  "packageUpdatedDate": {
+    "$date": "2023-11-07T03:33:41.285Z"
+  },
+  "createdUser": "activeascents",
+  "createdUserType": "instructor",
+  "activeStatus": "active",
+  "preset": false,
+  "presetUsers": [],
+  "country": "Norway",
+  "activity": "Ice Climbing",
+  "difficulty": "high",
+  "price": 100,
+  "duration": -2,
+  "place": "Norway",
+  "travelTime": {
+    "$date": "2023-12-03T00:00:00.000Z"
   },
   "previousExperience": true,
   "equipment": [
@@ -203,48 +287,18 @@
   "travelImage": [
     "/images/demo4.jpg"
   ],
-  "reviews": []
-},
-{
-  "_id": {
-    "$oid": "64e060d969f1242446b9840b"
+  "reviews": [],
+  "maxPrice": 200,
+  "travelTimeFive": {
+    "$date": "2023-04-03T00:00:00.000Z"
   },
-  "packageId": "pk06",
-  "packageType": "package",
-  "packageTitle": "Adventure Islands 1",
-  "packageCreatedDate": {
-    "$date": "2023-08-19T06:27:37.634Z"
+  "travelTimeFour": {
+    "$date": "2023-03-03T00:00:00.000Z"
   },
-  "packageUpdatedDate": {
-    "$date": "2023-10-11T17:30:24.774Z"
+  "travelTimeThree": {
+    "$date": "2023-02-03T00:00:00.000Z"
   },
-  "createdUser": "limon",
-  "createdUserType": "instructor",
-  "activeStatus": "active",
-  "preset": false,
-  "presetUsers": [],
-  "country": "USA",
-  "activity": "hiking",
-  "difficulty": "high",
-  "price": 3000,
-  "duration": 3,
-  "place": "California",
-  "travelTime": {
-    "$date": "2023-08-19T05:23:56.781Z"
-  },
-  "previousExperience": true,
-  "equipment": [
-    "raincoat"
-  ],
-  "groupSize": 3,
-  "travelDescription": "This is travel Description",
-  "haveGuiding": true,
-  "haveAccomodation": true,
-  "haveFood": true,
-  "travelImage": [
-    "/images/demo8.jpg"
-  ],
-  "reviews": []
+  "travelTimeTwo": "Dec, Jan, Feb, Mar, Apr"
 },
 {
   "_id": {
@@ -252,64 +306,26 @@
   },
   "packageId": "pk07",
   "packageType": "package",
-  "packageTitle": "Adventure Islands 2",
+  "packageTitle": "Vail",
   "packageCreatedDate": {
     "$date": "2023-08-19T06:27:49.184Z"
   },
   "packageUpdatedDate": {
-    "$date": "2023-08-19T06:27:49.184Z"
+    "$date": "2023-11-07T03:33:12.042Z"
   },
-  "createdUser": "limon",
+  "createdUser": "activeascents",
   "createdUserType": "instructor",
   "activeStatus": "active",
   "preset": false,
   "presetUsers": [],
   "country": "USA",
-  "activity": "hiking",
-  "difficulty": "high",
-  "price": 3000,
-  "duration": 3,
-  "place": "California",
+  "activity": "Cross Country Skiing",
+  "difficulty": "medium",
+  "price": 100,
+  "duration": 1,
+  "place": "Colorado",
   "travelTime": {
-    "$date": "2023-08-19T05:23:56.781Z"
-  },
-  "previousExperience": true,
-  "equipment": [
-    "raincoat"
-  ],
-  "groupSize": 3,
-  "travelDescription": "This is travel Description",
-  "haveGuiding": true,
-  "haveAccomodation": true,
-  "haveFood": true,
-  "travelImage": "/images/demo2.jpg"
-},
-{
-  "_id": {
-    "$oid": "64e060ed69f1242446b9840f"
-  },
-  "packageId": "pk08",
-  "packageType": "package",
-  "packageTitle": "Adventure Islands 3",
-  "packageCreatedDate": {
-    "$date": "2023-08-19T06:27:57.288Z"
-  },
-  "packageUpdatedDate": {
-    "$date": "2023-10-11T17:29:57.003Z"
-  },
-  "createdUser": "limon",
-  "createdUserType": "instructor",
-  "activeStatus": "active",
-  "preset": false,
-  "presetUsers": [],
-  "country": "USA",
-  "activity": "hiking",
-  "difficulty": "high",
-  "price": 3000,
-  "duration": 3,
-  "place": "California",
-  "travelTime": {
-    "$date": "2023-08-19T05:23:56.781Z"
+    "$date": "2023-01-03T00:00:00.000Z"
   },
   "previousExperience": true,
   "equipment": [
@@ -323,72 +339,43 @@
   "travelImage": [
     "/images/demo3.jpg"
   ],
-  "reviews": []
+  "maxPrice": 200,
+  "reviews": [],
+  "travelTimeFive": null,
+  "travelTimeFour": {
+    "$date": "2023-04-03T00:00:00.000Z"
+  },
+  "travelTimeThree": {
+    "$date": "2023-03-03T00:00:00.000Z"
+  },
+  "travelTimeTwo": "Jan, Feb, Mar, Apr"
 },
 {
   "_id": {
-    "$oid": "64e060f669f1242446b98411"
+    "$oid": "64e060ed69f1242446b9840f"
   },
-  "packageId": "pk09",
+  "packageId": "pk08",
   "packageType": "package",
-  "packageTitle": "Adventure Islands 4",
+  "packageTitle": "Great Blue Hole",
   "packageCreatedDate": {
-    "$date": "2023-08-19T06:28:06.664Z"
+    "$date": "2023-08-19T06:27:57.288Z"
   },
   "packageUpdatedDate": {
-    "$date": "2023-08-19T06:28:06.664Z"
+    "$date": "2023-11-07T03:32:50.347Z"
   },
-  "createdUser": "limon",
+  "createdUser": "activeascents",
   "createdUserType": "instructor",
   "activeStatus": "active",
   "preset": false,
   "presetUsers": [],
-  "country": "USA",
-  "activity": "hiking",
-  "difficulty": "high",
-  "price": 3000,
-  "duration": 3,
-  "place": "California",
+  "country": "Belize",
+  "activity": "Scuba Diving",
+  "difficulty": "low",
+  "price": 200,
+  "duration": 1,
+  "place": "Belize",
   "travelTime": {
-    "$date": "2023-08-19T05:23:56.781Z"
-  },
-  "previousExperience": true,
-  "equipment": [
-    "raincoat"
-  ],
-  "groupSize": 3,
-  "travelDescription": "This is travel Description",
-  "haveGuiding": true,
-  "haveAccomodation": true,
-  "haveFood": true,
-  "travelImage": "/images/demo2.jpg"
-},
-{
-  "_id": {
-    "$oid": "64e060fe69f1242446b98413"
-  },
-  "packageId": "pk10",
-  "packageType": "package",
-  "packageTitle": "Adventure Islands 5",
-  "packageCreatedDate": {
-    "$date": "2023-08-19T06:28:14.900Z"
-  },
-  "packageUpdatedDate": {
-    "$date": "2023-10-11T17:29:31.329Z"
-  },
-  "createdUser": "limon",
-  "createdUserType": "instructor",
-  "activeStatus": "active",
-  "preset": false,
-  "presetUsers": [],
-  "country": "USA",
-  "activity": "hiking",
-  "difficulty": "high",
-  "price": 2,
-  "duration": 3,
-  "place": "California",
-  "travelTime": {
-    "$date": "2023-08-19T05:23:56.781Z"
+    "$date": "2023-01-03T00:00:00.000Z"
   },
   "previousExperience": true,
   "equipment": [
@@ -400,7 +387,105 @@
   "haveAccomodation": true,
   "haveFood": true,
   "travelImage": [
-    "/images/demo5.jpg"
+    "/images/demo2.jpg"
+  ],
+  "reviews": [],
+  "maxPrice": 300,
+  "travelTimeFive": null,
+  "travelTimeFour": null,
+  "travelTimeThree": null,
+  "travelTimeTwo": "Year Round"
+},
+{
+  "_id": {
+    "$oid": "64e060f669f1242446b98411"
+  },
+  "packageId": "pk09",
+  "packageType": "package",
+  "packageTitle": "Vallee blanche",
+  "packageCreatedDate": {
+    "$date": "2023-08-19T06:28:06.664Z"
+  },
+  "packageUpdatedDate": {
+    "$date": "2023-11-07T03:32:28.384Z"
+  },
+  "createdUser": "activeascents",
+  "createdUserType": "instructor",
+  "activeStatus": "active",
+  "preset": false,
+  "presetUsers": [],
+  "country": "France",
+  "activity": "Ski Touring",
+  "difficulty": "high",
+  "price": 100,
+  "duration": 0,
+  "place": "France",
+  "travelTime": {
+    "$date": "2023-01-03T00:00:00.000Z"
+  },
+  "previousExperience": true,
+  "equipment": [
+    "raincoat"
+  ],
+  "groupSize": 3,
+  "travelDescription": "This is travel Description",
+  "haveGuiding": true,
+  "haveAccomodation": true,
+  "haveFood": true,
+  "travelImage": [
+    "/images/demo3.jpg"
+  ],
+  "maxPrice": 250,
+  "reviews": [],
+  "travelTimeFive": {
+    "$date": "2023-05-03T00:00:00.000Z"
+  },
+  "travelTimeFour": {
+    "$date": "2023-04-03T00:00:00.000Z"
+  },
+  "travelTimeThree": {
+    "$date": "2023-03-01T00:00:00.000Z"
+  },
+  "travelTimeTwo": "Jan, Feb, Mar, Apr, May"
+},
+{
+  "_id": {
+    "$oid": "64e060fe69f1242446b98413"
+  },
+  "packageId": "pk10",
+  "packageType": "package",
+  "packageTitle": "Verbier",
+  "packageCreatedDate": {
+    "$date": "2023-08-19T06:28:14.900Z"
+  },
+  "packageUpdatedDate": {
+    "$date": "2023-11-07T03:31:35.488Z"
+  },
+  "createdUser": "activeascents",
+  "createdUserType": "instructor",
+  "activeStatus": "active",
+  "preset": false,
+  "presetUsers": [],
+  "country": "Switzerland",
+  "activity": "Paragliding",
+  "difficulty": "medium",
+  "price": 500,
+  "duration": 3,
+  "place": "Switzerland",
+  "travelTime": {
+    "$date": "2023-05-03T00:00:00.000Z"
+  },
+  "previousExperience": true,
+  "equipment": [
+    "raincoat"
+  ],
+  "groupSize": 3,
+  "travelDescription": "This is travel Description",
+  "haveGuiding": true,
+  "haveAccomodation": true,
+  "haveFood": true,
+  "travelImage": [
+    "/images/demo6.jpg"
   ],
   "reviews": [
     {
@@ -427,7 +512,14 @@
         "$oid": "650adc710c263192acdb0f9f"
       }
     }
-  ]
+  ],
+  "maxPrice": 2000,
+  "travelTimeFive": null,
+  "travelTimeFour": null,
+  "travelTimeThree": {
+    "$date": "2023-07-01T00:00:00.000Z"
+  },
+  "travelTimeTwo": "May, Jun, Jul"
 },
 {
   "_id": {
@@ -1318,28 +1410,28 @@
   },
   "packageId": "pk333",
   "packageType": "package",
-  "packageTitle": "Adventure China",
+  "packageTitle": "Matterhorn (4478m)",
   "packageCreatedDate": {
     "$date": "2023-09-09T09:14:19.815Z"
   },
   "packageUpdatedDate": {
-    "$date": "2023-10-11T17:36:25.680Z"
+    "$date": "2023-11-07T00:57:04.721Z"
   },
-  "createdUser": "abdullahlimon",
+  "createdUser": "activeascents",
   "createdUserType": "instructor",
   "activeStatus": "active",
   "preset": true,
   "presetUsers": [
     "limon"
   ],
-  "country": "Bangladesh",
-  "activity": "Riding",
-  "difficulty": "medium",
-  "price": 2500,
-  "duration": 5,
-  "place": "China",
+  "country": "Switzerland",
+  "activity": "Mountaineering",
+  "difficulty": "high",
+  "price": 1000,
+  "duration": 2,
+  "place": "Switzerland",
   "travelTime": {
-    "$date": "2023-09-14T00:00:00.000Z"
+    "$date": "2023-06-03T00:00:00.000Z"
   },
   "previousExperience": true,
   "equipment": [
@@ -1351,7 +1443,7 @@
   "haveAccomodation": true,
   "haveFood": true,
   "travelImage": [
-    "/images/demo8.jpg",
+    "/images/demo1.jpg",
     "/images/demo2.jpg"
   ],
   "reviews": [
@@ -1415,7 +1507,16 @@
         "$oid": "650596424077ace89e790923"
       }
     }
-  ]
+  ],
+  "maxPrice": 2000,
+  "travelTimeFour": {
+    "$date": "2023-09-01T00:00:00.000Z"
+  },
+  "travelTimeThree": {
+    "$date": "2023-08-01T00:00:00.000Z"
+  },
+  "travelTimeTwo": "Jun, July, Aug, Sep",
+  "travelTimeFive": null
 },
 {
   "_id": {
@@ -1549,26 +1650,26 @@
   },
   "packageId": "pk-2023101333735719",
   "packageType": "package",
-  "packageTitle": "The sundarban",
+  "packageTitle": "Inca Trail (112mile)",
   "packageCreatedDate": {
     "$date": "2023-10-12T21:37:53.169Z"
   },
   "packageUpdatedDate": {
-    "$date": "2023-10-12T21:42:03.220Z"
+    "$date": "2023-11-07T00:41:29.065Z"
   },
-  "createdUser": "limon",
+  "createdUser": "activeascents",
   "createdUserType": "instructor",
   "activeStatus": "active",
   "preset": false,
   "presetUsers": [],
-  "country": "Bangladesh ",
-  "activity": "hiking",
-  "difficulty": "high",
-  "price": 2000,
-  "duration": 5,
-  "place": "Khulna",
+  "country": "Peru",
+  "activity": "Hiking",
+  "difficulty": "low",
+  "price": 500,
+  "duration": 4,
+  "place": "Peru",
   "travelTime": {
-    "$date": "2023-10-28T00:00:00.000Z"
+    "$date": "2023-06-01T00:00:00.000Z"
   },
   "previousExperience": true,
   "equipment": [],
@@ -1578,7 +1679,15 @@
   "haveAccomodation": true,
   "haveFood": true,
   "travelImage": [
-    "/images/demo7.jpg"
+    "/images/demo8.jpg"
   ],
-  "reviews": []
+  "reviews": [],
+  "maxPrice": 1000,
+  "travelTimeFour": {
+    "$date": "2023-09-03T00:00:00.000Z"
+  },
+  "travelTimeThree": {
+    "$date": "2023-08-03T00:00:00.000Z"
+  },
+  "travelTimeTwo": "Jun, Jul, Aug, Sep"
 }]

@@ -30,7 +30,8 @@
   z-index: 5;
 }
 
-.sign-in-form,.sign-up-form {
+.sign-in-form,
+.sign-up-form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,7 +130,7 @@ form.sign-in-form {
   background-color: #5995fd;
   border: none;
   outline: none;
-  height: 49px;
+  height: auto;
   border-radius: 49px;
   color: #fff;
   text-transform: uppercase;
@@ -137,6 +138,7 @@ form.sign-in-form {
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 0.7rem;
 }
 
 .btn-signin:hover {
@@ -338,7 +340,7 @@ form.sign-in-form {
   }
 
   .container-slide-signin.sign-up-mode:before {
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 95%);
     bottom: 32%;
     right: initial;
   }
@@ -380,7 +382,7 @@ form.sign-in-form {
   }
 
   .container-slide-signin:before {
-    bottom: 72%;
+    bottom: 60%;
     left: 50%;
   }
 

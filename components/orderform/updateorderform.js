@@ -6,7 +6,6 @@ import myToast from "@/components/toast/toast";
 import { updateData } from "@/apiservices/orderapiservices";
 import { useState, useEffect } from "react";
 import { getToken } from "@/helper/sessionHelper";
-import mytoast from "@/components/toast/toast";
 
 function UpdateOrderForm(props) {
   const isAdmin = getToken("token_travel");
@@ -61,10 +60,18 @@ function UpdateOrderForm(props) {
 
   const clickHandler = async (e) => {
     e.preventDefault();
-    const clientID = clientIDref.current ? clientIDref.current.value : orders.clientID;
-    const orderID = orderIDref.current ? orderIDref.current.value : orders.orderID;
-    const packageID = packageIDref.current ? packageIDref.current.value : orders.packageID;
-    const instructorID = instructorIDref.current ? instructorIDref.current.value : orders.instructorID;
+    const clientID = clientIDref.current
+      ? clientIDref.current.value
+      : orders.clientID;
+    const orderID = orderIDref.current
+      ? orderIDref.current.value
+      : orders.orderID;
+    const packageID = packageIDref.current
+      ? packageIDref.current.value
+      : orders.packageID;
+    const instructorID = instructorIDref.current
+      ? instructorIDref.current.value
+      : orders.instructorID;
     const orderDescription = orderDescriptionref.current.value;
     const orderPrice = orderPriceref.current.value;
     const orderNumber = orderNumberref.current.value;
@@ -289,7 +296,6 @@ function UpdateOrderForm(props) {
               id="radioDefault1"
               name="status"
               className="form-check-input mt-1 mr-2"
-              checked
             />
             <label htmlFor="radioDefault1">Active</label>
           </div>
@@ -316,7 +322,6 @@ function UpdateOrderForm(props) {
               id="radioDefault2"
               name="status"
               className="form-check-input mt-1 mr-2"
-              checked
             />
             <label
               htmlFor="radioDefault2"

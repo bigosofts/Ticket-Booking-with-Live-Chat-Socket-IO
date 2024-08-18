@@ -74,34 +74,60 @@ function FrontBody({ children }) {
     let front_client_instructor = frontWidget.find(
       (item) => item.widgetName == "front_client_instructor"
     ).widgetPayload;
-    let why_choose = frontWidget.find(
-      (item) => item.widgetName == "why_choose"
-    ).widgetPayload;
-    let our_partner = frontWidget.find(
-      (item) => item.widgetName == "our_partner"
+    let about_us = frontWidget.find(
+      (item) => item.widgetName == "about_us"
     ).widgetPayload;
 
     return (
       <div style={{ overflowX: "hidden" }} className="container-custom">
         <div
-          style={{ marginTop: "0px" }}
+          style={{ marginTop: "0px", paddingTop: "100px" }}
           className="section-front-res section-front"
         >
+          <div className="p-0 p-md-5 text-center">
+            <h1 className="mb-3 got_an">
+              Got an adventure in mind? Look no further. We partner guides and
+              clients for whatever experience takes your fancy.
+            </h1>
+          </div>
           <div className="slide" data-anchor="slide1">
             <div className="row px-2 px-md-5 row-cols-1 row-cols-md-2">
               {front_client_instructor.map((item, i) => (
                 <div
                   key={i}
-                  className="col px-4 px-md-5 mb-5 mb-md-0 animate__animated animate__backInLeft animate__delay-5s"
+                  className="col px-4 px-md-5 mb-5 mb-md-0 animate__animated animate__backInLeft"
                 >
                   <Link href={item.link}>
-                    <div style={{background:`url("${item.image}")`}} className="card-front-sec card bg-dark text-white">
-                      
+                    <div
+                      style={{
+                        background: `url("${item.image}")`,
+                        backgroundPosition: "10% 20%",
+                      }}
+                      className="card-front-sec card bg-dark text-white"
+                    >
                       <div className="card-img-overlay">
-                        <h1 className="card-title">{item.title}</h1>
-                        <h5 className="card-text">{item.description}</h5>
-
-                        <p className="card-text">Last updated: {item.time}</p>
+                        <div className="overlay-image-div">
+                          <h1
+                            style={{
+                              textAlign: "center",
+                              marginBottom: "10px",
+                              color: "#000",
+                            }}
+                            className="card-title"
+                          >
+                            {item.title}
+                          </h1>
+                          <h5
+                            style={{
+                              textAlign: "center",
+                              color: "#000",
+                              padding: "0 10%",
+                            }}
+                            className="card-text"
+                          >
+                            {item.description}
+                          </h5>
+                        </div>
                       </div>
                     </div>
                   </Link>
@@ -135,41 +161,30 @@ function FrontBody({ children }) {
             </button>
           </div>
         </div>
+
         <div className="section-front px-4 px-md-5">
           <div className="p-4 text-center">
-            <h1 className="mb-3">Why Choose Active Ascents?</h1>
+            <h1 className="mb-3">About Us</h1>
           </div>
           <section className="service-categories text-xs-center px-0 px-md-5">
             <div className="row">
-              {why_choose.map((item, i) => (
-                <div key={i} className="col-6 col-md-3">
-                  <Link href="/travels">
-                    <div className="front-card service-card card-inverse">
-                      <div className="card-block">
-                        <span className={`${item.icon} fa-3x`}></span>
-                        <h4 className="card-title">{item.text}</h4>
-                      </div>
-                    </div>
-                  </Link>
+              {about_us.map((item, i) => (
+                <div key={i} className="col-12">
+                  <div className="parallax-about">
+                    <h2 style={{ textAlign: "justify" }} className="mb-3">
+                      {item.text}
+                    </h2>
+                  </div>
                 </div>
               ))}
             </div>
           </section>
         </div>
+
         <div
           style={{ marginBottom: "200px" }}
           className="section-front px-4 px-md-5"
         >
-          <div className="px-5 py-5 text-center">
-            <h1 className="mb-3">Our Partner</h1>
-          </div>
-          <div className="row row-cols-2 row-cols-md-6 g-5 px-2 px-md-5">
-            {our_partner.map((item, i) => (
-              <div key={i} className="col">
-                <img style={{ width: "100%" }} src={`${item.logo}`} alt="" />
-              </div>
-            ))}
-          </div>
           <div style={{ marginTop: "100px" }} className="px-5 py-5 text-center">
             <h1 className="mb-3">Our Blogs</h1>
           </div>

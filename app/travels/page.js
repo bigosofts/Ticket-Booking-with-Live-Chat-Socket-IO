@@ -15,8 +15,9 @@ import HeaderFront from "@/components/HeaderFront/HeaderFront";
 import CoverElement from "@/components/CoverElement/CoverElement";
 import FrontFooter from "@/components/FrontFooter/FrontFooter";
 import SearchComponent from "@/components/SearchComponent/SearchComponent";
+import Loader from "@/components/loader/Loader";
 
-function page(props) {
+function Page(props) {
   const searchParams = useSearchParams();
   const searchtext = searchParams.get("search");
 
@@ -24,31 +25,37 @@ function page(props) {
   const country = searchParams.get("country");
 
   const [admin, setAdmin] = useState();
+  const [scrolled, setScrolled] = useState(false);
   const dispatch = useDispatch();
 
   const filteredPackageData = useSelector(
     (state) => state.instructorFilter.value
   );
+
   useEffect(() => {
     async function settingData() {
       try {
-        if (activity && country) {
+        if (activity || country || searchtext) {
+          debugger;
           const dataArray = await selectPackages({
             activeStatus: "active",
             packageType: "package",
-            activity: activity,
-            country: country,
+            activity: activity || undefined,
+            country: country || undefined,
           });
 
-          const first = await dispatch(setInitialData(dataArray.data));
+          const first = dispatch(setInitialData(dataArray.data));
+          debugger;
           if (first && searchtext) {
             dispatch(queryFilter(searchtext));
+            debugger;
           }
         } else {
           const dataArray = await selectPackages({
             activeStatus: "active",
             packageType: "package",
           });
+          debugger;
 
           dispatch(setInitialData(dataArray.data));
         }
@@ -68,15 +75,28 @@ function page(props) {
     }
 
     fetchData();
-  }, []);
- 
+
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activity, country, searchtext]);
 
   if (filteredPackageData) {
     return (
       <div className="travelpage-container">
-        <HeaderFront />
+        <HeaderFront scrolledStatus={scrolled} />
         <CoverElement id={"Travel Packages"} />
-        <div style={{ margin: "auto"}}>
+        <div style={{ margin: "auto" }}>
           <SearchComponent />
           <PopularChoiceGrid detailData={filteredPackageData} />
         </div>
@@ -85,8 +105,8 @@ function page(props) {
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 }
 
-export default page;
+export default Page;

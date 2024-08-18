@@ -1,0 +1,27 @@
+.form-single-page {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  
+  padding: 20px;
+  border-radius: 5px;
+}
+.form-single-page div h1 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.form-single-page div input,
+.form-single-page div select {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.checkbox-single-form input {
+  width: 20%;
+  clear: both;
+}
+.checkbox-single-form label {
+  width: 80%;
+  clear: both;
+}

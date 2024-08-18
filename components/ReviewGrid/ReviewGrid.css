@@ -1,0 +1,216 @@
+.comment-cst {
+  margin-bottom: 80px;
+  box-sizing: border-box;
+  max-width: 500px;
+}
+
+.comment-cst .style-1 {
+  margin-bottom: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-2 {
+  display: table;
+  text-decoration: none solid rgb(0, 113, 133);
+  color: rgb(0, 113, 133);
+  box-sizing: border-box;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.comment-cst .style-3 {
+  padding-right: 9px;
+  width: 43px;
+  display: table-cell;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-4 {
+  height: 34px;
+  width: 34px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-5 {
+  border-radius: 34px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  vertical-align: top;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-6 {
+  box-sizing: border-box;
+}
+
+.comment-cst .style-7 {
+  min-height: 34px;
+  display: table-cell;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-8 {
+  font-size: 13px;
+  line-height: 19px;
+  position: relative;
+  color: rgb(15, 17, 17);
+  unicode-bidi: isolate;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-9 {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-10 {
+  color: rgb(15, 17, 17);
+  text-decoration: none solid rgb(15, 17, 17);
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.comment-cst .style-11 {
+  box-sizing: border-box;
+  height: 18px;
+  width: 80px;
+  position: relative;
+  vertical-align: text-top;
+  background-position: -2px -2px;
+  background-image: url("https://m.media-amazon.com/images/S/sash/AlBdmSbHJgW56$l.png");
+  background-size: 512px 512px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  font-style: italic;
+}
+
+.comment-cst .style-12 {
+  box-sizing: border-box;
+  clip-path: circle(0px);
+  left: auto;
+  width: 100%;
+  height: 18px;
+  font-size: 14px;
+  line-height: normal;
+  opacity: 0;
+  position: absolute;
+  top: auto;
+  display: block;
+  overflow: hidden;
+}
+
+.comment-cst .style-13 {
+  display: inline-block;
+  width: 0.385em;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-14 {
+  box-sizing: border-box;
+  color: #3a3a3a;
+}
+
+.comment-cst .style-15 {
+  color: rgb(134, 134, 134);
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.comment-cst .style-22 {
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-23 {
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.comment-cst .style-24 {
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-25 {
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-26 {
+  box-sizing: border-box;
+}
+
+.comment-cst .style-27 {
+  opacity: 0;
+  display: none;
+  display: none;
+  outline: rgb(15, 17, 17) none 0px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+.comment-cst .style-28 {
+  height: 16px;
+  width: 100%;
+  position: absolute;
+  top: -16px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255)) repeat scroll 0%
+    0% / auto padding-box border-box;
+  box-sizing: border-box;
+}
+
+.comment-cst .style-29 {
+  text-decoration: none solid rgb(0, 113, 133);
+  color: rgb(0, 113, 133);
+  box-sizing: border-box;
+}
+
+.comment-cst .style-30 {
+  margin-bottom: 3px;
+  height: 7px;
+  width: 7px;
+  margin-left: 2px;
+  transform: none;
+  margin-top: -5px;
+  background-image: none;
+  border-style: solid;
+  border-color: rgb(15, 17, 17);
+  border-image: none;
+  border-width: 0px 2px 2px 0px;
+  padding: 3px;
+  opacity: 1;
+  box-sizing: border-box;
+  background-position: -82px -293px;
+  position: relative;
+  vertical-align: baseline;
+  margin-right: 5.39px;
+  display: inline-block;
+  background-size: 400px 900px;
+  background-repeat: no-repeat;
+  font-style: italic;
+}
+
+.comment-cst .style-31 {
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}

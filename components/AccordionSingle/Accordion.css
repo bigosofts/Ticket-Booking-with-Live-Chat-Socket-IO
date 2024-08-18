@@ -1,0 +1,65 @@
+
+  .menu-accordion{
+    width: 90%;
+    margin: 50px auto;
+    position:relative;
+    font-family: arial;
+    
+  }
+  .menu-accordion ul{
+    list-style:none;
+    padding-left:0px;
+   
+  }
+  .menu-accordion ul li{
+    margin-bottom:5px;
+    transition: 0.5s ease-out;
+  }
+  
+  .menu-accordion input[type=radio]{
+    display:none;
+  }
+  .menu-accordion label{
+    height: 40px;
+    background: #eee;
+    display:block;
+    color: #222;
+    font-size: 20px;
+    border:1px solid #ddd;
+    padding:5px 10px;
+    line-height:40px;
+    cursor: pointer;
+    z-index:2;
+  }
+  .menu-accordion label:after{
+    content:"+";
+    
+    position:absolute;
+    right:20px;
+    font-size:1.5em;
+    line-height:40px;
+    font-weight:normal;
+    transition:all .3s;
+  }
+  
+  .menu-accordion input[type=radio]:checked ~ label:after{
+    content:"−";
+    transform: rotate(360deg);
+  }
+  .menu-accordion input[type=radio]:checked ~ label{
+    height: 40px;
+    background: #ddd;
+    display:block;
+    transition: all .5s;
+  }
+  
+  .menu-accordion input[type=radio] ~ .content{
+    border:1px solid #ddd;
+    padding:10px;
+    display:none;
+  }
+  .menu-accordion input[type=radio]:checked ~ .content{
+    display:block;
+    height:auto;
+  }
+  

@@ -111,4 +111,23 @@
   "password": "$2b$12$zKcBaTIY6.ZNZ2TR3f09R.I0oxFgkxAACeeyhqouwJMmxpfNseEZ2",
   "isAdmin": false,
   "profileImage": "/images/demo1.jpg"
+},
+{
+  "_id": {
+    "$oid": "6550cb41619ac4479a88e636"
+  },
+  "userName": "Jack101096",
+  "userRole": "client",
+  "clientEmail": "jackharrison104@hotmail.co.uk",
+  "clientPhone": 555,
+  "clientCreatedDate": {
+    "$date": "2023-11-12T12:55:29.252Z"
+  },
+  "clientUpdatedDate": {
+    "$date": "2023-11-12T12:55:29.252Z"
+  },
+  "activeStatus": "active",
+  "password": "$2b$12$0W.qen9ieaEUAjDk6djsH.dxYvd3usrBKwHeIkVRQgn4zAlJNgPv.",
+  "isAdmin": false,
+  "profileImage": "/images/demo1.jpg"
 }]
