@@ -1,11 +1,8 @@
 "use client";
-import React from "react";
-import Nav from "@/Navigation/Nav";
-import Sidebar from "@/Sidebar/Sidebar";
+
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import Packages from "@/Packages/Packages";
-import Recommended from "@/Recommended/Recommended";
+
 import { selectData } from "@/apiservices/travelpackageapiservices.js";
 import { useSelector, useDispatch } from "react-redux";
 import { setInitialData } from "@/app/redux/features/instructorFilter/instructorFilterSlice";
@@ -13,10 +10,6 @@ import { getToken } from "@/helper/sessionHelper.js";
 
 function InstructorPage({ params }) {
   const router = useRouter();
-  const [hide, setHide] = useState(true);
-  function hideChanger() {
-    setHide((prev) => !prev);
-  }
 
   const data6 = getToken("token_travel");
   console.log(data6 + "data6");
