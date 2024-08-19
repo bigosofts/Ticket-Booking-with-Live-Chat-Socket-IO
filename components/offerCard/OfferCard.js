@@ -74,7 +74,7 @@ const OfferCard = ({ msgData, id, socket }) => {
               msgData.sendedpackageID,
               msgData.sender,
               "New Order",
-              "unpaid",
+              "completed",
               totalPrice,
               msgData.quantityPackage,
               "active",
