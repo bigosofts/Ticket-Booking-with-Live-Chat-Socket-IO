@@ -13,7 +13,7 @@
 }
 
 .logo {
-  width: 150px;
+  width: 80px;
 }
 
 header {
@@ -23,8 +23,8 @@ header {
   padding: 0rem 0;
   top: 0;
   left: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-  background-color: rgba(0, 0, 0, 0.1);
+
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .scrolled {

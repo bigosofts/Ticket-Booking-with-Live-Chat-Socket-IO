@@ -61,17 +61,7 @@ function InstructorPage({ params }) {
       router.push("/login");
     } else {
       if (params.adminslug == data.data.userName) {
-        return (
-          <div className="container-admin">
-            <Nav isAdmin={data} filler={actualData} />
-            <div className="main-wrapper-custom">
-              <Sidebar filler={actualData} hide={hide} />
-              <Packages filler={filteredPackageData} hideChanger={hideChanger}>
-                <Recommended filler={actualData} />
-              </Packages>
-            </div>
-          </div>
-        );
+        router.replace(`/dashboard/${data.data.userName}/setting`);
       } else {
         router.replace(`/dashboard/${data.data.userName}`);
       }

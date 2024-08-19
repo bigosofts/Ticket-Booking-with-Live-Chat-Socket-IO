@@ -83,7 +83,7 @@
 }
 
 .travelpage-container .port {
-  padding-top: 250px !important;
+  padding-top: 150px !important;
   margin-bottom: 100px;
 }
 
@@ -141,7 +141,10 @@
 .sidebar-travelpage {
   background-color: #fff;
 
+  width: 40%;
+  margin: 0 auto;
   margin-bottom: 80px;
+  padding-bottom: 50px;
 }
 
 .sidebar-travelpage .search input {
@@ -618,7 +621,7 @@ label.star:before {
   }
   .sidebar-travelpage {
     background-color: #fff;
-    max-width: 450px;
+    width: unset;
     margin: auto;
     margin-bottom: 50px;
   }
@@ -644,9 +647,7 @@ label.star:before {
   .visibility-sidebar2 {
     display: block;
   }
-  .visibility-sidebar {
-    display: none;
-  }
+
   .floating-back-button {
     top: 100px;
   }

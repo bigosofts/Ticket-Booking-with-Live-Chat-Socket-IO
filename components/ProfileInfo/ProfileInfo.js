@@ -110,7 +110,12 @@ const ProfileInfo = () => {
               <div className="image-wrapper">
                 <a>
                   <img
-                    style={{ height: "auto" }}
+                    style={{
+                      height: "400px",
+                      width: "400px",
+                      borderRadius: "50%",
+                      margin: "0px auto",
+                    }}
                     className="post-image-size"
                     src={item.profileImage}
                     alt=""

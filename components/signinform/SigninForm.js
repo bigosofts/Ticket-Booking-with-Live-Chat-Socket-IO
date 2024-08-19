@@ -163,6 +163,14 @@ function SigninForm(props) {
             >
               Sign up
             </button>
+            <button
+              style={{ marginLeft: "20px", marginTop: "20px" }}
+              onClick={() => hardRefreshCustom("/")}
+              className="btn btn-signin transparent"
+              id="sign-up-btn"
+            >
+              Go to Home
+            </button>
           </div>
           <img src="" className="image" alt="" />
         </div>

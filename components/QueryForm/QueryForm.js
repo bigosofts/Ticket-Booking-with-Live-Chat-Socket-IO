@@ -27,7 +27,6 @@ const QueryForm = ({ item }) => {
     const rejectedPkg = false;
     const quantity = 1;
     const xtraPrice = 0;
-    debugger;
 
     const messageResponse = await createData(
       text,
@@ -43,7 +42,7 @@ const QueryForm = ({ item }) => {
       quantity,
       xtraPrice
     );
-    debugger;
+
     if (messageResponse) {
       if (messageResponse.status == "Success") {
         myToast.success("message send");
@@ -51,7 +50,6 @@ const QueryForm = ({ item }) => {
         console.log(messageResponse);
       }
     }
-    debugger;
   };
 
   async function SendMsgRequest(Data) {
@@ -66,6 +64,9 @@ const QueryForm = ({ item }) => {
       );
       if (resC.data.length > 0) {
         myToast.warning("Conversation already created. Go to message");
+        setTimeout(() => {
+          router.push(`/dashboard/${isAdmin.data.userName}/setting`);
+        }, 2000);
       } else {
         let res = await createConversations(
           conversationID,
@@ -101,8 +102,11 @@ const QueryForm = ({ item }) => {
       );
       if (resC.data.length > 0) {
         sendMessageHandler(formattedText, resC.data[0].conversationID);
-        debugger;
+
         myToast.warning("Conversation already created. Go to message");
+        setTimeout(() => {
+          router.push(`/dashboard/${isAdmin.data.userName}/setting`);
+        }, 2000);
       } else {
         let res = await createConversations(
           conversationID,
@@ -116,12 +120,12 @@ const QueryForm = ({ item }) => {
         if (res) {
           if (res.status == "Success") {
             myToast.success("Request Accepted");
-            debugger;
+
             sendMessageHandler(formattedText, conversationID);
-            debugger;
-            // setTimeout(() => {
-            //   router.push(`/dashboard/${isAdmin.data.userName}/setting`);
-            // }, 2000);
+
+            setTimeout(() => {
+              router.push(`/dashboard/${isAdmin.data.userName}/setting`);
+            }, 2000);
           } else {
             myToast.warning("Something Went Wrong, See console");
             console.log(res);
@@ -300,7 +304,6 @@ const QueryForm = ({ item }) => {
         }}
         className="d-grid gap-2 book-button"
       >
-        
         {item.packageType == "custom" && isAdmin.data.userRole == "client" ? (
           ""
         ) : item.packageType == "custom" &&
@@ -321,7 +324,7 @@ const QueryForm = ({ item }) => {
             className="btn btn-primary"
             type="button"
           >
-            Request a Guide
+            Talk to Guide in Live Chat
           </button>
         ) : item.packageType == "package" &&
           isAdmin.data.userRole == "instructor" ? (

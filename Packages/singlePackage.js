@@ -48,38 +48,7 @@ function SinglePackage({ items }) {
               ({items.reviews.length} reviews)
             </span>
           </p>
-          <div
-            className="detail_data"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "20px 15% 0px 15%",
-            }}
-          >
-            <div>
-              <table id="postGridTable" style={{ width: "100%" }}>
-                
-                <tr>
-                  <td>Difficulty:</td>
-                  <td className="td-right">{items.difficulty}</td>
-                </tr>
-                <tr>
-                  <td>Time of year:</td>
-                  <td className="td-right">{items.travelTimeTwo}</td>
-                </tr>
-                <tr>
-                  <td>Price range:</td>
-                  <td className="td-right">
-                    ${items.price} - ${items.maxPrice}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Duration:</td>
-                  <td className="td-right">{items.duration} days</td>
-                </tr>
-              </table>
-            </div>
-          </div>
+          
         </div>
         <div
           className="theme_two_box_content"

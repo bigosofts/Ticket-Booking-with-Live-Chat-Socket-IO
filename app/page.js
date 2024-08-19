@@ -29,7 +29,7 @@ function Page(props) {
     getData();
   }, []);
 
-  router.replace("/travels/pk-20246181625232");
+  router.replace("/travels");
 }
 
 export default Page;

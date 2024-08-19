@@ -20,7 +20,7 @@ function BookingInfoCard({ filler }) {
           </div>
         </div>
         <div className="style-5">
-          <img src="/images/next1.png" className="style-6" />
+         
           <div className="style-7">
             <div className="style-8">{filler.packageTitle}</div>
           </div>
