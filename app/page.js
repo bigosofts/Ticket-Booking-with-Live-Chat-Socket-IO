@@ -1,9 +1,5 @@
 "use client";
-import HeaderFront from "@/components/HeaderFront/HeaderFront";
-import HeroSection from "@/components/HeroSection/HeroSection";
-import FrontBody from "@/components/FrontBody/FrontBody";
-import FrontFooter from "@/components/FrontFooter/FrontFooter";
-import SearchComponent from "@/components/SearchComponent/SearchComponent";
+
 import { useEffect, useState } from "react";
 import { isAdmin } from "@/apiservices/checklogin";
 import { useDispatch, useSelector } from "react-redux";

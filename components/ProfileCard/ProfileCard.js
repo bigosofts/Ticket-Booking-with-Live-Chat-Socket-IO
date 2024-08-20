@@ -13,9 +13,7 @@ function ProfileCard(props) {
   }, []);
   return (
     <div class="container-profile-card">
-      <div class="cover">
-       
-      </div>
+      <div class="cover"></div>
       <div class="text-center">
         <h1>{isAdmin.data.userName}</h1>
         <p class="subtitle">{isAdmin.data.userRole} Profile</p>
@@ -23,19 +21,11 @@ function ProfileCard(props) {
       <div class="main">
         <ul class="tabs">
           <li data-target="intro" class="active">
-            About
+            Messages
           </li>
-          <li data-target="history">Messages</li>
-          <li data-target="contact">Setting</li>
         </ul>
         <div id="intro" class="tab-content active">
-          <ProfileInfo />
-        </div>
-        <div id="history" class="tab-content">
           <ChatBox />
-        </div>
-        <div id="contact" class="tab-content">
-          <ProfileUpdateForm />
         </div>
       </div>
     </div>
