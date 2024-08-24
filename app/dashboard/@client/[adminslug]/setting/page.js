@@ -5,9 +5,7 @@ import { getToken } from "@/helper/sessionHelper";
 import "../../../@admin/[adminslug]/dashsidebar.css";
 
 function SettingClientPage(props) {
-  function goBack() {
-    history.back();
-  }
+  
   const data = getToken("token_travel");
   return (
     <>

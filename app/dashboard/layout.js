@@ -8,9 +8,9 @@ import { getToken } from "@/helper/sessionHelper";
 
 function DashboardLayout({ client, instructor, admin }) {
   const data6 = getToken("token_travel");
-  console.log(data6 + "data6");
+ 
   const data5 = useSelector((state) => state.isAdmin.value);
-  console.log(data5 + "data5");
+  
 
   let data = data6 ? data6 : data5;
 

@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import "./ProfileCard.css";
 import ChatBox from "../ChatBox/ChatBox";
 import { useSelector } from "react-redux";
-import ProfileInfo from "../ProfileInfo/ProfileInfo";
-import ProfileUpdateForm from "../profileupdatePage/ProfileUpdateForm";
+
 
 function ProfileCard(props) {
   const isAdmin = useSelector((state) => state.isAdmin.value);
@@ -13,6 +12,7 @@ function ProfileCard(props) {
   }, []);
   return (
     <div class="container-profile-card">
+      <div class="cover"></div>
       <div class="cover"></div>
       <div class="text-center">
         <h1>{isAdmin.data.userName}</h1>
@@ -23,8 +23,13 @@ function ProfileCard(props) {
           <li data-target="intro" class="active">
             Messages
           </li>
+          <li data-target="history" class="active">
+            Messages
+          </li>
         </ul>
         <div id="intro" class="tab-content active">
+
+        <div id="history" class="tab-content">
           <ChatBox />
         </div>
       </div>

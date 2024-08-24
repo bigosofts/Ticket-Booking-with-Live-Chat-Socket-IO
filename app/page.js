@@ -1,8 +1,12 @@
 "use client";
 
+<<<<<<< HEAD
+import { useEffect } from "react";
+=======
 import { useEffect, useState } from "react";
+>>>>>>> 7805eba8a9fedc48d11fa4e9c9b7dd51cb3dbc21
 import { isAdmin } from "@/apiservices/checklogin";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setInitialData } from "./redux/features/isAdmin/isAdminSlice";
 import { getToken, setToken } from "@/helper/sessionHelper";
 import { useRouter } from "next/navigation";
