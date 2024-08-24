@@ -4,7 +4,6 @@ import "./ProfileCard.css";
 import ChatBox from "../ChatBox/ChatBox";
 import { useSelector } from "react-redux";
 
-
 function ProfileCard(props) {
   const isAdmin = useSelector((state) => state.isAdmin.value);
   useEffect(() => {
@@ -13,7 +12,7 @@ function ProfileCard(props) {
   return (
     <div class="container-profile-card">
       <div class="cover"></div>
-      <div class="cover"></div>
+
       <div class="text-center">
         <h1>{isAdmin.data.userName}</h1>
         <p class="subtitle">{isAdmin.data.userRole} Profile</p>
@@ -23,13 +22,9 @@ function ProfileCard(props) {
           <li data-target="intro" class="active">
             Messages
           </li>
-          <li data-target="history" class="active">
-            Messages
-          </li>
         </ul>
-        <div id="intro" class="tab-content active">
 
-        <div id="history" class="tab-content">
+        <div id="intro" class="tab-content active">
           <ChatBox />
         </div>
       </div>

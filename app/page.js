@@ -1,10 +1,6 @@
 "use client";
 
-<<<<<<< HEAD
 import { useEffect } from "react";
-=======
-import { useEffect, useState } from "react";
->>>>>>> 7805eba8a9fedc48d11fa4e9c9b7dd51cb3dbc21
 import { isAdmin } from "@/apiservices/checklogin";
 import { useDispatch } from "react-redux";
 import { setInitialData } from "./redux/features/isAdmin/isAdminSlice";
@@ -25,11 +21,15 @@ function Page(props) {
         dispatch(setInitialData(res));
         setToken("token_travel", { status: "noToken", data: "" });
       }
-    }
-    getData();
-  }, []);
 
-  router.replace("/travels");
+      // Navigate to /travels after the data is fetched
+      router.replace("/travels");
+    }
+
+    getData();
+  }, [dispatch, router]);
+
+  return null; // Since you're redirecting, no need to render anything here
 }
 
 export default Page;
