@@ -54,7 +54,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Demo
 
-Browse this link to see theme in action:
+Browse this link to see chat app is in action:
 
 https://chatapp.bigosofts.com/
 ## Features
